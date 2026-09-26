@@ -31,6 +31,11 @@ Coding-agent disclosure (how the agent was directed, decision by decision): **[A
   never appears in another's results. There is no `WHERE tenant_id = …` that could be forgotten.
 * **Same shape everywhere.** Every knowledge base is created from the same schema file, so columns,
   indexes, chunking and ranking behave identically. Onboarding a tenant is one API call.
+* **Storage is content-addressed.** Audio and transcripts are stored by content hash (`up_<sha1>`), so
+  tenants can't collide and identical uploads are transcribed once. Access always goes through the
+  collection's own `files` table (the API looks up the collection before serving audio). In production the
+  local `data/audio/` becomes object storage with a per-tenant prefix (`s3://bucket/<collection>/<file_id>`);
+  `audio_url` already points there. `data/` in this repo holds only the NASA golden set.
 * **Per-tenant growth.** Indexes (HNSW, full-text, trigram) are per collection, so a large tenant
   doesn't slow a small one; a collection can later move to its own database or partition with no
   query changes.
