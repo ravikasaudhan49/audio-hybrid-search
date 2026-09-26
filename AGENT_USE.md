@@ -39,6 +39,6 @@
   (`python -m audiosearch eval --rerank`, `bench`, `report`), with the outputs stored in
   [`test-results/`](test-results/README.md).
 * **Observability:** request-id logging and per-stage timings made each step inspectable.
-* **The owner reviewed every step** in the UI and CLI before moving on, and redirected the work where
+* **I reviewed every step** in the UI and CLI before moving on, and redirected the work where
   needed (e.g. switching transcription provider for speaker names, limiting API usage, scoping
   the golden set).
