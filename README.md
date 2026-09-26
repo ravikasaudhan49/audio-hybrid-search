@@ -285,6 +285,23 @@ speaker 0.83 → 1.00; entity, keyword and phrase are 1.00 for both. Not at rank
 q41 (rank 3). One false answer: n01 "Mars helicopter flights" (ep424 discusses Mars rover
 autonomy, and the reranker scores it above the cut-off). This is reported, not tuned away.
 
+### Transcription quality (ASR): how it was checked
+Retrieval is only as good as the transcript, so ASR output was checked before relying on it:
+* **Speaker separation:** every episode came back with exactly 2 speakers; turn-by-turn reading of
+  all 6 clips (while writing the golden queries) found the speaker changes in the right places;
+  1–3 diarization flips per episode were smoothed automatically.
+* **Speaker names** (AssemblyAI Speaker Identification): identified from context alone, with no names
+  supplied, and correct for all 6 speaker pairs when checked against the episode intros. One
+  formatting artefact ("Carlos Garcia-Galan - 1") was corrected in the manifest.
+* **Word accuracy:** provider confidence 0.97–0.999. Reading the clips found isolated errors on
+  proper names and fast speech: *Krantz* / *Kranz*, *"tough incompetent"* for *"failure is not an
+  option"*, and the host name **"Leah Cheshire"**, which NASA's official page spells **"Cheshier"**.
+  The retrieval side is built to tolerate this (trigram typo ranker, keyterm prompting, semantic
+  search).
+* **Not yet done:** a quantitative ASR evaluation. NASA publishes human-edited transcripts with speaker
+  labels for each episode, which allows word error rate, named-entity accuracy and speaker
+  attribution per provider with no extra API calls. This is designed and is the next step.
+
 ### What evaluation caught (and how it was handled)
 | Run | Finding | Action |
 |---|---|---|
