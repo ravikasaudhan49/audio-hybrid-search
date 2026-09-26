@@ -53,7 +53,7 @@ the timestamp of the matched word, and the speaker's name**. See `README.md` and
 ```
 For retrieval changes, also run `python -m audiosearch eval --rerank` and report the table.
 For performance changes, run `python -m audiosearch bench` and report p50/p90/p99.
-
+ 
 ## Conventions
 * Python 3.12+, ruff (line length 120), type hints, small functions, docstrings that explain *why*.
 * Logging via `audiosearch.log.get(__name__)`; every line carries the request / job id; never log keys.
