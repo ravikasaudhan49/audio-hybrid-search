@@ -9,7 +9,7 @@ Phrase queries ("...") accept ANY place in the clip where the exact phrase is sa
 No API calls.
 
 (v1 used only the anchor's own 2-3 seconds; answers found a sentence later in the same turn were
-scored as misses. See AGENT_LOG for both results.)
+scored as misses.)
 
 Run:  python -m eval.build_golden
 """

@@ -41,5 +41,5 @@ For each query in `misses` / `false_answers` (see `eval/results.json`), inspect 
 - **Genuine limitation** → report it; do **not** tune thresholds to hide it.
 
 ## 5. Report
-Update the results tables in `README.md` §5 and §7 and add an `AGENT_LOG.md` entry with the
+Update the results tables in `README.md` §5 and §7 and note in the change description the
 before/after numbers and what caused any change.
