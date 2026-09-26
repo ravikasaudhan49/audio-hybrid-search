@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "id": "ep01",
+      "title": "Show name - Episode title",
+      "source_url": "https://example.com/episode",
+      "license": "e.g. CC BY 4.0 / used with permission",
+      "audio": "ep01.mp3",
+      "clip": { "source": "raw/full-episode.mp3", "start": "00:12:30", "duration": 540 },
+      "speakers": { "0": "Host Name", "1": "Guest Name" },
+      "keyterms": ["Guest Name", "ProductName", "jargon-term"]
+    }
+  ]
+}
