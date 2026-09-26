@@ -298,9 +298,6 @@ Retrieval is only as good as the transcript, so ASR output was checked before re
   option"*, and the host name **"Leah Cheshire"**, which NASA's official page spells **"Cheshier"**.
   The retrieval side is built to tolerate this (trigram typo ranker, keyterm prompting, semantic
   search).
-* **Not yet done:** a quantitative ASR evaluation. NASA publishes human-edited transcripts with speaker
-  labels for each episode, which allows word error rate, named-entity accuracy and speaker
-  attribution per provider with no extra API calls. This is designed and is the next step.
 
 ### What evaluation caught (and how it was handled)
 | Run | Finding | Action |
