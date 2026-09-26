@@ -1,7 +1,6 @@
 # CLAUDE.md: rules for coding agents working on this repository
 
-These are the standing instructions the project owner gave the coding agent (Claude Code) during
-development, codified in one place. Any agent or contributor must follow them. Decisions behind
+These are the standing instructions the project owner gives the coding agent (Claude Code). Any agent or contributor must follow them. Decisions behind
 the rules are recorded in `docs/adr/`.
 
 ## What this project is

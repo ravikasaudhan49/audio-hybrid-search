@@ -1,7 +1,7 @@
 # Architecture Decision Records
 
 Short records of the major design decisions (context, options, decision, consequences, evidence).
-Each was decided by the project owner; the coding agent supplied analysis and measurements.
+Each was decided by the project owner.
 
 | ADR | Decision |
 |---|---|

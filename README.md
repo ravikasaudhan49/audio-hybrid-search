@@ -17,7 +17,7 @@ answer on top.
 | **Tests** | 71 automated tests incl. a recall@k quality gate (`python -m audiosearch test`) |
 
 Architecture diagrams and the data model: **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
-Coding-agent disclosure (how the agent was directed): **[§10](#10-coding-agent-disclosure)**, [`CLAUDE.md`](CLAUDE.md), [`docs/adr/`](docs/adr/README.md).
+Coding-agent disclosure: **[AGENT_USE.md](AGENT_USE.md)** (and [§10](#10-coding-agent-disclosure)).
 
 ## 🏢 Built for production: multi-tenant knowledge bases, designed to scale
 
@@ -149,7 +149,7 @@ library of transcripts, the evaluation dashboard, and a collection picker.
 | **3. Local solution; transcripts generated; results show file, timestamp, speaker** | Postgres/pgvector, the API, UI and search all run locally (Docker + Python). Transcripts are generated per file (AssemblyAI / Deepgram, allowed to be hosted). Each hit shows the **file, the exact second the matched word was spoken, and the speaker's name**, with the matched words highlighted. ⚠ Embeddings: see [§9](#9-limitations). |
 | **4. Automated tests measuring recall@k against a labeled query set** | 76-query golden set with transcript-anchored labels; `eval/evaluate.py` reports recall@1/3/5/10, MRR, no-answer accuracy and speaker accuracy per configuration and query type; `tests/test_recall.py` **fails the build** if recall@5 < 0.90, recall@10 < 0.95, off-topic handling < 0.75 or speaker accuracy < 0.95. |
 | Design, rationale, success criteria, achievement, limitations | This README |
-| Coding-agent disclosure | [§10](#10-coding-agent-disclosure), [`CLAUDE.md`](CLAUDE.md), [`docs/adr/`](docs/adr/README.md) |
+| Coding-agent disclosure | [AGENT_USE.md](AGENT_USE.md), [§10](#10-coding-agent-disclosure) |
 | Code, golden dataset and tests in a repository | This repository: `data/` (clips, transcripts, manifest, golden spec and labels), `tests/`, `eval/` |
 
 ---
@@ -375,38 +375,15 @@ with idempotent file ids (already content-hashed).
 
 ## 10. Coding-agent disclosure
 
-**How the agent was steered: the artifacts**
+The project was built with **Claude Code** as a pair programmer: **the project owner led the
+architecture and made the design decisions; Claude Code wrote the code** and ran the tests,
+evaluations and benchmarks. How it was directed (requirements, standing rules, workflows) and how
+its output was verified: **[AGENT_USE.md](AGENT_USE.md)**.
 
 | Artifact | Role |
 |---|---|
-| [`CLAUDE.md`](CLAUDE.md) | Standing rules the owner gave the agent: architecture constraints, API budget rules, evaluation rules, definition of done |
-| [`.claude/skills/`](.claude/skills) | Reusable workflows the agent follows step by step: [`golden-eval`](.claude/skills/golden-eval/SKILL.md) (add queries → build labels → evaluate → investigate misses → report), [`add-episode`](.claude/skills/add-episode/SKILL.md) (golden clip or upload) |
-| [`docs/adr/`](docs/adr/README.md) | Architecture Decision Records: the owner's major decisions with context, options and evidence |
-| `tests/` + `ruff` + `eval` | Guardrails: the agent's work counts as done only when lint, the tests and the recall@k gate pass |
-
-`CLAUDE.md` and the skills codify the rules and workflows used throughout development; they were
-written down as files at the end of the project.
-
-
-This project was built with **Claude Code** (Anthropic) as a pair-programming agent. **The project
-owner led the architecture and made every major design decision**: problem choice, providers,
-chunking scheme, retrieval pipeline, multi-tenancy, evaluation approach and scope. The agent
-proposed options with trade-offs, implemented what the owner decided, ran the measurements and
-reported findings for the owner to act on. How it was directed:
-
-* **Requirements came as prompts** at each step ("plan what is asked", "make it async and scalable",
-  "child 128 / parent 512 tokens, embeddings on child text, dedup by parent_id", "use AssemblyAI to
-  get speaker names", "collections like MongoDB", "add a summary answer", "p50/p90/p99 at
-  concurrency 5"). The standing rules are in [`CLAUDE.md`](CLAUDE.md); the decisions in [`docs/adr/`](docs/adr/README.md).
-* **Owner-led design decisions:** hybrid search with reranking and MMR; hosted Gemini embeddings
-  (1536-d); Deepgram, then AssemblyAI for speaker names; the parent-child chunking scheme with its
-  `parent_id` deduplication; the asynchronous backend/frontend split; collections per tenant; the
-  episode timeline with `audio_url`; the summary answer; the golden-set scope and the latency targets;
-  API budget limits on free-tier keys.
-* **Agent analysis the owner evaluated before deciding:** trade-offs of Gemini Live versus batch ASR,
-  chunk-size arithmetic for 9-minute files (which set the final 128/512 sizes), measured score
-  distributions for the thresholds, the pipeline-mode measurement, and reporting the "Mars" false
-  answer rather than tuning it away.
-* **Verification discipline:** the agent was asked to test before claiming success. Unit, API,
-  database and recall-gate tests (71 passing); logs with request ids; live checks kept to a
-  minimum because the keys are free-tier.
+| [`AGENT_USE.md`](AGENT_USE.md) | How the agent was used and directed, with examples of the owner's requirements |
+| [`CLAUDE.md`](CLAUDE.md) | Standing rules for the agent: architecture, API budget, evaluation rules, definition of done |
+| [`.claude/skills/`](.claude/skills) | Workflows: [`golden-eval`](.claude/skills/golden-eval/SKILL.md), [`add-episode`](.claude/skills/add-episode/SKILL.md) |
+| [`docs/adr/`](docs/adr/README.md) | Architecture Decision Records |
+| `tests/` + `ruff` + `eval` | Guardrails: work counts as done only when lint, tests and the recall@k gate pass |
