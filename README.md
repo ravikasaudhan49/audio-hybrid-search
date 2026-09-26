@@ -299,14 +299,6 @@ Retrieval is only as good as the transcript, so ASR output was checked before re
   The retrieval side is built to tolerate this (trigram typo ranker, keyterm prompting, semantic
   search).
 
-### What evaluation caught (and how it was handled)
-| Run | Finding | Action |
-|---|---|---|
-| 3 clips, labels = the anchor's 2–3 s | "affect **gene** expression" returned nothing | **real bug**: read as the speaker Gene Kranz, fixed (D10) |
-| same | correct answers a sentence later in the same answer (q28) and the same quote by the host (q27) scored as misses | labels became answer passages (±30 s, same turn); phrase queries accept any occurrence |
-| 6 clips | q62 "is there frozen water on the Moon…" → "a block of ice in the permanently shadowed regions" scored as a miss | passages now span backchannels ("Right."), mirroring the chunker |
-
-Numbers before the label corrections: recall@5 0.93 (3 clips). All runs are in AGENT_LOG.md.
 
 ---
 
