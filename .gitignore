@@ -1,0 +1,20 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/raw/
+logs/
+.cache/
+
+# --- data: commit the 9-min golden clips + their transcripts, not full episodes / uploads / raw ASR ---
+data/audio/*-*.mp3
+data/audio/up_*.mp3
+data/raw/
+data/transcripts/*.deepgram.json
+data/transcripts/*.assemblyai.json
+data/transcripts/up_*
+data/transcripts/*-*.transcript.json
+# local tooling
+.ruff_cache/
+eval/__pycache__/

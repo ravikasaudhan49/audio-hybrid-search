@@ -1,0 +1,528 @@
+{
+ "collection": "nasa",
+ "about": "Golden query set. Each query names the clip it is answered in and an ANCHOR: a phrase copied verbatim from that clip's transcript inside the answering passage. eval/build_golden.py locates the anchor's words and turns their timestamps into the labeled span (episode time) plus the speaker who said it, writing data/queries.json. Negative queries have no anchor: nothing in the collection answers them. Types: keyword (exact words), phrase (quoted), entity (names/organisations), semantic (paraphrase with little word overlap), speaker (speaker named in the query), role (host/guest in the query), typo (misspelled), negative.",
+ "queries": [
+  {
+   "id": "q01",
+   "type": "keyword",
+   "query": "registry not large enough",
+   "file": "ep432",
+   "anchor": "registry is not large enough"
+  },
+  {
+   "id": "q02",
+   "type": "semantic",
+   "query": "why is it hard to find stem cell matches for minority patients",
+   "file": "ep432",
+   "anchor": "doesn't have equal representation of those minorities"
+  },
+  {
+   "id": "q03",
+   "type": "keyword",
+   "query": "cytokines",
+   "file": "ep432",
+   "anchor": "cocktail of growth factors and cytokines"
+  },
+  {
+   "id": "q04",
+   "type": "semantic",
+   "query": "why can't you simply multiply stem cells in a lab dish",
+   "file": "ep432",
+   "anchor": "stem cells are inherently designed to keep their numbers"
+  },
+  {
+   "id": "q05",
+   "type": "semantic",
+   "query": "what would people look like if we evolved on a much heavier planet",
+   "file": "ep432",
+   "anchor": "We might look more like a lizard"
+  },
+  {
+   "id": "q06",
+   "type": "phrase",
+   "query": "\"affect gene expression\"",
+   "file": "ep432",
+   "anchor": "it does affect gene expression as well"
+  },
+  {
+   "id": "q07",
+   "type": "semantic",
+   "query": "the core question of the space station stem cell experiment",
+   "file": "ep432",
+   "anchor": "Can stem cell grow faster in in space"
+  },
+  {
+   "id": "q08",
+   "type": "entity",
+   "query": "microgravity expanded stem cells study",
+   "file": "ep432",
+   "anchor": "the study microgravity expanded stem cells"
+  },
+  {
+   "id": "q09",
+   "type": "semantic",
+   "query": "growing cells without them maturing into specialized cells",
+   "file": "ep432",
+   "anchor": "grow without differentiating"
+  },
+  {
+   "id": "q10",
+   "type": "speaker",
+   "query": "what did Zubair say about differentiation",
+   "file": "ep432",
+   "anchor": "expand the stem cell without them being differentiated"
+  },
+  {
+   "id": "q11",
+   "type": "role",
+   "query": "what did the host ask about the childhood dream in Nigeria",
+   "file": "ep432",
+   "anchor": "childhood dream in Nigeria"
+  },
+  {
+   "id": "q12",
+   "type": "entity",
+   "query": "Larry Harvey",
+   "file": "ep432",
+   "anchor": "Larry Harvey is maybe one of your audiences"
+  },
+  {
+   "id": "q13",
+   "type": "semantic",
+   "query": "how did the researcher first get connected to space research",
+   "file": "ep432",
+   "anchor": "he reached out to somebody he knew within Mayo"
+  },
+  {
+   "id": "q14",
+   "type": "typo",
+   "query": "strok recovry",
+   "file": "ep432",
+   "anchor": "help recovery after stroke"
+  },
+  {
+   "id": "q15",
+   "type": "semantic",
+   "query": "success comes down to knowing the right people",
+   "file": "ep432",
+   "anchor": "it's always about connection and networking"
+  },
+  {
+   "id": "q16",
+   "type": "entity",
+   "query": "Harry Carroll",
+   "file": "ep433",
+   "anchor": "my first boss Harry Carroll"
+  },
+  {
+   "id": "q17",
+   "type": "phrase",
+   "query": "\"we will leave as a team\"",
+   "file": "ep433",
+   "anchor": "we will leave as a team"
+  },
+  {
+   "id": "q18",
+   "type": "semantic",
+   "query": "what did the flight director promise his controllers before the lunar landing",
+   "file": "ep433",
+   "anchor": "I will stand behind every call you will make"
+  },
+  {
+   "id": "q19",
+   "type": "keyword",
+   "query": "Gemini eight",
+   "file": "ep433",
+   "anchor": "on Gemini eight, we had a serious problem"
+  },
+  {
+   "id": "q20",
+   "type": "phrase",
+   "query": "\"risk is the price of progress\"",
+   "file": "ep433",
+   "anchor": "risk is the price of progress"
+  },
+  {
+   "id": "q21",
+   "type": "semantic",
+   "query": "why he enjoyed decisions having no grey areas",
+   "file": "ep433",
+   "anchor": "There are no shades of gray"
+  },
+  {
+   "id": "q22",
+   "type": "keyword",
+   "query": "crew chief hand salute",
+   "file": "ep433",
+   "anchor": "he'd give me a hand salute"
+  },
+  {
+   "id": "q23",
+   "type": "role",
+   "query": "what did the host ask about tough and competent",
+   "file": "ep433",
+   "anchor": "What does tough and competent mean to you"
+  },
+  {
+   "id": "q24",
+   "type": "speaker",
+   "query": "what did Kranz say about accountability",
+   "file": "ep433",
+   "anchor": "Tough means accepting accountability"
+  },
+  {
+   "id": "q25",
+   "type": "semantic",
+   "query": "training program for new generations of shuttle flight controllers",
+   "file": "ep433",
+   "anchor": "we established a boot camp"
+  },
+  {
+   "id": "q26",
+   "type": "entity",
+   "query": "special forces in Afghanistan",
+   "file": "ep433",
+   "anchor": "special forces team that adopted that over in Afghanistan"
+  },
+  {
+   "id": "q27",
+   "type": "phrase",
+   "query": "\"failure is not an option\"",
+   "file": "ep433",
+   "anchor": "failure is not an option was created by Hollywood"
+  },
+  {
+   "id": "q28",
+   "type": "semantic",
+   "query": "how did the famous Apollo 13 movie line come about",
+   "file": "ep433",
+   "anchor": "whose son, he went out to Hollywood"
+  },
+  {
+   "id": "q29",
+   "type": "typo",
+   "query": "Jery Bostik",
+   "file": "ep433",
+   "anchor": "Jerry Bostick, whose son"
+  },
+  {
+   "id": "q30",
+   "type": "entity",
+   "query": "Jim Lovell book",
+   "file": "ep433",
+   "anchor": "Jim Lovell was writing a book"
+  },
+  {
+   "id": "q31",
+   "type": "semantic",
+   "query": "what he actually told the team when the crew's return was in doubt",
+   "file": "ep433",
+   "anchor": "we have never lost an American in space"
+  },
+  {
+   "id": "q32",
+   "type": "role",
+   "query": "what did the guest say about trust",
+   "file": "ep433",
+   "anchor": "trusting each one another"
+  },
+  {
+   "id": "q33",
+   "type": "semantic",
+   "query": "does failure mean never making mistakes or refusing to quit",
+   "file": "ep433",
+   "anchor": "what does failure mean to you"
+  },
+  {
+   "id": "q34",
+   "type": "entity",
+   "query": "Center for the Advancement of Science in Space",
+   "file": "ep435",
+   "anchor": "brainchild of the state of Florida"
+  },
+  {
+   "id": "q35",
+   "type": "semantic",
+   "query": "when did the nonprofit begin running the orbiting laboratory",
+   "file": "ep435",
+   "anchor": "signed our cooperative agreement with NASA"
+  },
+  {
+   "id": "q36",
+   "type": "entity",
+   "query": "Department of Energy national labs",
+   "file": "ep435",
+   "anchor": "part of the Department of Energy System"
+  },
+  {
+   "id": "q37",
+   "type": "semantic",
+   "query": "why is sending an experiment to orbit so difficult for a scientist",
+   "file": "ep435",
+   "anchor": "you have to launch it in flight certified hardware"
+  },
+  {
+   "id": "q38",
+   "type": "keyword",
+   "query": "Tetris",
+   "file": "ep435",
+   "anchor": "play the game of Tetris"
+  },
+  {
+   "id": "q39",
+   "type": "phrase",
+   "query": "\"astronaut proof it\"",
+   "file": "ep435",
+   "anchor": "astronaut proof it as best you can"
+  },
+  {
+   "id": "q40",
+   "type": "semantic",
+   "query": "who pays for transporting research to and from the station",
+   "file": "ep435",
+   "anchor": "The ride up, the ride down"
+  },
+  {
+   "id": "q41",
+   "type": "speaker",
+   "query": "what did Gary Jordan say about astronauts running experiments",
+   "file": "ep435",
+   "anchor": "You have to hand that over to an astronaut"
+  },
+  {
+   "id": "q42",
+   "type": "entity",
+   "query": "Merck and Eli Lilly",
+   "file": "ep435",
+   "anchor": "Merck or an Eli Lilly"
+  },
+  {
+   "id": "q43",
+   "type": "keyword",
+   "query": "protein crystallization",
+   "file": "ep435",
+   "anchor": "focused on protein crystallization"
+  },
+  {
+   "id": "q44",
+   "type": "typo",
+   "query": "Bristol Myers Squib",
+   "file": "ep435",
+   "anchor": "Bristol Myers Squibb"
+  },
+  {
+   "id": "q45",
+   "type": "role",
+   "query": "what did the host say about being the new kid on the block",
+   "file": "ep435",
+   "anchor": "you are the new kid on the block"
+  },
+  {
+   "id": "q46",
+   "type": "semantic",
+   "query": "how long does post-flight rehabilitation take for astronauts",
+   "file": "ep399",
+   "anchor": "about 30 days to 45 days to make sure that we're released"
+  },
+  {
+   "id": "q47",
+   "type": "entity",
+   "query": "United Launch Alliance",
+   "file": "ep399",
+   "anchor": "working with United Launch Alliance, our launch provider"
+  },
+  {
+   "id": "q48",
+   "type": "semantic",
+   "query": "was the real launch different from the training simulations",
+   "file": "ep399",
+   "anchor": "it was really close to the sim, actually"
+  },
+  {
+   "id": "q49",
+   "type": "phrase",
+   "query": "\"if you can start it, you can fly it\"",
+   "file": "ep399",
+   "anchor": "if you can start it, you can fly it"
+  },
+  {
+   "id": "q50",
+   "type": "semantic",
+   "query": "which direction of movement could the spacecraft no longer control near the station",
+   "file": "ep399",
+   "anchor": "we had lost, uh, one of our degrees of freedom"
+  },
+  {
+   "id": "q51",
+   "type": "speaker",
+   "query": "what did Suni Williams say about flying manually near the station",
+   "file": "ep399",
+   "anchor": "fly in from 260 meters to 200 meters"
+  },
+  {
+   "id": "q52",
+   "type": "typo",
+   "query": "sublimater isue",
+   "file": "ep399",
+   "anchor": "our sublimator had a little bit of an issue"
+  },
+  {
+   "id": "q53",
+   "type": "role",
+   "query": "what did the host ask about the problems on the way uphill",
+   "file": "ep399",
+   "anchor": "there were some issues on the way uphill"
+  },
+  {
+   "id": "q54",
+   "type": "entity",
+   "query": "ExoMiner",
+   "file": "ep424",
+   "anchor": "within ExoMiner, where we use data from the Kepler and TESS space telescopes"
+  },
+  {
+   "id": "q55",
+   "type": "semantic",
+   "query": "how does the Mars rover plan its own route",
+   "file": "ep424",
+   "anchor": "that autonomy allows it to kind of avoid obstacles and do route planning in situ"
+  },
+  {
+   "id": "q56",
+   "type": "semantic",
+   "query": "a Soviet rover driven remotely from Earth",
+   "file": "ep424",
+   "anchor": "the Soviet Union drove a rover on the Moon"
+  },
+  {
+   "id": "q57",
+   "type": "phrase",
+   "query": "\"human in the loop\"",
+   "file": "ep424",
+   "anchor": "as long as there's a human in the loop"
+  },
+  {
+   "id": "q58",
+   "type": "keyword",
+   "query": "garbage in garbage out",
+   "file": "ep424",
+   "anchor": "garbage in, garbage out"
+  },
+  {
+   "id": "q59",
+   "type": "semantic",
+   "query": "should I let an AI chatbot answer my email",
+   "file": "ep424",
+   "anchor": "You don't want to set up a chatbot which responds to all your emails"
+  },
+  {
+   "id": "q60",
+   "type": "role",
+   "query": "what did the host say about the Summer of AI",
+   "file": "ep424",
+   "anchor": "NASA did this thing called the Summer of AI"
+  },
+  {
+   "id": "q61",
+   "type": "speaker",
+   "query": "what did Kevin Murphy say about training the workforce",
+   "file": "ep424",
+   "anchor": "we have a number of opportunities which are primarily discussion-based"
+  },
+  {
+   "id": "q62",
+   "type": "semantic",
+   "query": "is there frozen water on the Moon we could use",
+   "file": "ep436",
+   "anchor": "we have picked up that there's water on the Moon"
+  },
+  {
+   "id": "q63",
+   "type": "keyword",
+   "query": "3D printing with regolith",
+   "file": "ep436",
+   "anchor": "use regolith to do some 3D printing of structures on the Moon"
+  },
+  {
+   "id": "q64",
+   "type": "semantic",
+   "query": "using lasers to build roads on the lunar surface",
+   "file": "ep436",
+   "anchor": "using lasers to modify the regolith"
+  },
+  {
+   "id": "q65",
+   "type": "entity",
+   "query": "helium-3 mining",
+   "file": "ep436",
+   "anchor": "things that we actually want to mine like helium-3"
+  },
+  {
+   "id": "q66",
+   "type": "semantic",
+   "query": "how will the base get electricity at the south pole",
+   "file": "ep436",
+   "anchor": "it's very likely to be solar towers"
+  },
+  {
+   "id": "q67",
+   "type": "keyword",
+   "query": "wireless charging",
+   "file": "ep436",
+   "anchor": "we'd like to make it wireless charging"
+  },
+  {
+   "id": "q68",
+   "type": "typo",
+   "query": "radioisotope heeting units",
+   "file": "ep436",
+   "anchor": "the radioisotope heating units"
+  },
+  {
+   "id": "q69",
+   "type": "semantic",
+   "query": "how much payload can today's robotic landers carry",
+   "file": "ep436",
+   "anchor": "in the 500-kilogram payload capacity"
+  },
+  {
+   "id": "q70",
+   "type": "speaker",
+   "query": "what did Carlos say about mission control",
+   "file": "ep436",
+   "anchor": "when we talk about like mission control"
+  },
+  {
+   "id": "q71",
+   "type": "role",
+   "query": "what did the guest say about cargo deliveries for long missions",
+   "file": "ep436",
+   "anchor": "Every block of like 30 days is going to require a good amount of logistics missions"
+  },
+  {
+   "id": "n01",
+   "type": "negative",
+   "query": "Mars helicopter flights"
+  },
+  {
+   "id": "n02",
+   "type": "negative",
+   "query": "recipe for chocolate chip cookies"
+  },
+  {
+   "id": "n03",
+   "type": "negative",
+   "query": "James Webb Space Telescope mirror alignment"
+  },
+  {
+   "id": "n04",
+   "type": "negative",
+   "query": "SpaceX Starship heat shield tiles"
+  },
+  {
+   "id": "n05",
+   "type": "negative",
+   "query": "best coffee brewing methods"
+  }
+ ]
+}

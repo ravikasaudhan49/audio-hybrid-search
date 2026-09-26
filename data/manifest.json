@@ -1,0 +1,129 @@
+{
+  "collection": "nasa",
+  "files": [
+    {
+      "id": "ep432",
+      "title": "Houston We Have a Podcast Ep 432: ISS Results - Stem Cells in Space",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep432-iss-stem-cells.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep432.mp3",
+      "host": "Gary Jordan",
+      "clip": {
+        "source": "audio/ep432-iss-stem-cells.mp3",
+        "start": "00:17:30",
+        "duration": 540,
+        "transcript_from": "ep432-iss-stem-cells",
+        "source_speakers": {
+          "0": "Gary Jordan",
+          "1": "Abba Zubair"
+        }
+      },
+      "keyterms": [
+        "Abba Zubair",
+        "Mayo Clinic",
+        "stem cells",
+        "transfusion medicine"
+      ]
+    },
+    {
+      "id": "ep433",
+      "title": "Houston We Have a Podcast Ep 433: Call Sign White Flight",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep433-callsign-white-flight.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep433.mp3",
+      "host": "Leah Cheshire",
+      "clip": {
+        "source": "audio/ep433-callsign-white-flight.mp3",
+        "start": "00:21:30",
+        "duration": 540,
+        "transcript_from": "ep433-callsign-white-flight",
+        "source_speakers": {
+          "0": "Leah Cheshire",
+          "1": "Gene Kranz"
+        }
+      },
+      "keyterms": [
+        "Gene Kranz",
+        "White Flight",
+        "Apollo",
+        "Mission Control"
+      ]
+    },
+    {
+      "id": "ep435",
+      "title": "Houston We Have a Podcast Ep 435: National Lab 15",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep435-national-lab-15.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep435.mp3",
+      "host": "Gary Jordan",
+      "clip": {
+        "source": "audio/ep435-national-lab-15.mp3",
+        "start": "00:04:00",
+        "duration": 540,
+        "transcript_from": "ep435-national-lab-15",
+        "source_speakers": {
+          "0": "Gary Jordan",
+          "1": "Patrick O'Neil"
+        }
+      },
+      "keyterms": [
+        "Patrick O'Neil",
+        "CASIS",
+        "ISS National Lab"
+      ]
+    },
+    {
+      "id": "ep399",
+      "title": "Houston We Have a Podcast Ep 399: Record-Breaking Astronaut",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep399-record-breaking-astronaut.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep399.mp3",
+      "host": "Dane Turner",
+      "clip": {
+        "source": "audio/ep399-record-breaking-astronaut.mp3",
+        "start": "00:03:00",
+        "duration": 540,
+        "transcript_from": "up_84dfcc75",
+        "source_speakers": {}
+      }
+    },
+    {
+      "id": "ep424",
+      "title": "Houston We Have a Podcast Ep 424: AI at NASA",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep424-ai-at-nasa.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep424.mp3",
+      "host": "Nilufar Ramji",
+      "clip": {
+        "source": "audio/ep424-ai-at-nasa.mp3",
+        "start": "00:12:30",
+        "duration": 540,
+        "transcript_from": "up_c1f21203",
+        "source_speakers": {}
+      }
+    },
+    {
+      "id": "ep436",
+      "title": "Houston We Have a Podcast Ep 436: Moon Base",
+      "source_url": "https://www.nasa.gov/podcasts/houston-we-have-a-podcast/",
+      "audio_url": "https://media.example.com/podcasts/ep436-moon-base.mp3",
+      "license": "NASA podcast, US government work (public domain)",
+      "audio": "ep436.mp3",
+      "host": "Nilufar Ramji",
+      "clip": {
+        "source": "audio/ep436-moon-base.mp3",
+        "start": "00:28:30",
+        "duration": 540,
+        "transcript_from": "up_0d94d614",
+        "source_speakers": {
+          "1": "Carlos Garcia-Galan"
+        }
+      }
+    }
+  ]
+}

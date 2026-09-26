@@ -1,0 +1,1044 @@
+{
+ "collection": "nasa",
+ "queries": [
+  {
+   "id": "q01",
+   "type": "keyword",
+   "query": "registry not large enough",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1050.08,
+     "end": 1070.24,
+     "speaker": "Abba Zubair",
+     "anchor": "registry is not large enough"
+    }
+   ]
+  },
+  {
+   "id": "q02",
+   "type": "semantic",
+   "query": "why is it hard to find stem cell matches for minority patients",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1050.08,
+     "end": 1070.24,
+     "speaker": "Abba Zubair",
+     "anchor": "doesn't have equal representation of those minorities"
+    }
+   ]
+  },
+  {
+   "id": "q03",
+   "type": "keyword",
+   "query": "cytokines",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1119.01,
+     "end": 1172.66,
+     "speaker": "Abba Zubair",
+     "anchor": "cocktail of growth factors and cytokines"
+    }
+   ]
+  },
+  {
+   "id": "q04",
+   "type": "semantic",
+   "query": "why can't you simply multiply stem cells in a lab dish",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1119.01,
+     "end": 1181.8,
+     "speaker": "Abba Zubair",
+     "anchor": "stem cells are inherently designed to keep their numbers"
+    }
+   ]
+  },
+  {
+   "id": "q05",
+   "type": "semantic",
+   "query": "what would people look like if we evolved on a much heavier planet",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1218.56,
+     "end": 1280.43,
+     "speaker": "Abba Zubair",
+     "anchor": "We might look more like a lizard"
+    }
+   ]
+  },
+  {
+   "id": "q06",
+   "type": "phrase",
+   "query": "\"affect gene expression\"",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1256.85,
+     "end": 1319.94,
+     "speaker": "Abba Zubair",
+     "anchor": "it does affect gene expression as well"
+    }
+   ]
+  },
+  {
+   "id": "q07",
+   "type": "semantic",
+   "query": "the core question of the space station stem cell experiment",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1296.17,
+     "end": 1338.7,
+     "speaker": "Abba Zubair",
+     "anchor": "Can stem cell grow faster in in space"
+    }
+   ]
+  },
+  {
+   "id": "q08",
+   "type": "entity",
+   "query": "microgravity expanded stem cells study",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1338.7,
+     "end": 1359.19,
+     "speaker": "Gary Jordan",
+     "anchor": "the study microgravity expanded stem cells"
+    }
+   ]
+  },
+  {
+   "id": "q09",
+   "type": "semantic",
+   "query": "growing cells without them maturing into specialized cells",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1365.81,
+     "end": 1428.11,
+     "speaker": "Abba Zubair",
+     "anchor": "grow without differentiating"
+    }
+   ]
+  },
+  {
+   "id": "q10",
+   "type": "speaker",
+   "query": "what did Zubair say about differentiation",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1377.33,
+     "end": 1430.66,
+     "speaker": "Abba Zubair",
+     "anchor": "expand the stem cell without them being differentiated"
+    }
+   ]
+  },
+  {
+   "id": "q11",
+   "type": "role",
+   "query": "what did the host ask about the childhood dream in Nigeria",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1430.66,
+     "end": 1465.01,
+     "speaker": "Gary Jordan",
+     "anchor": "childhood dream in Nigeria"
+    }
+   ]
+  },
+  {
+   "id": "q12",
+   "type": "entity",
+   "query": "Larry Harvey",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1479.62,
+     "end": 1538.59,
+     "speaker": "Abba Zubair",
+     "anchor": "Larry Harvey is maybe one of your audiences"
+    }
+   ]
+  },
+  {
+   "id": "q13",
+   "type": "semantic",
+   "query": "how did the researcher first get connected to space research",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1488.12,
+     "end": 1551.7,
+     "speaker": "Abba Zubair",
+     "anchor": "he reached out to somebody he knew within Mayo"
+    }
+   ]
+  },
+  {
+   "id": "q14",
+   "type": "typo",
+   "query": "strok recovry",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1536.42,
+     "end": 1589.91,
+     "speaker": "Abba Zubair",
+     "anchor": "help recovery after stroke"
+    }
+   ]
+  },
+  {
+   "id": "q15",
+   "type": "semantic",
+   "query": "success comes down to knowing the right people",
+   "relevant": [
+    {
+     "file": "ep432",
+     "start": 1556.94,
+     "end": 1589.91,
+     "speaker": "Abba Zubair",
+     "anchor": "it's always about connection and networking"
+    }
+   ]
+  },
+  {
+   "id": "q16",
+   "type": "entity",
+   "query": "Harry Carroll",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1300.75,
+     "end": 1334.81,
+     "speaker": "Gene Kranz",
+     "anchor": "my first boss Harry Carroll"
+    }
+   ]
+  },
+  {
+   "id": "q17",
+   "type": "phrase",
+   "query": "\"we will leave as a team\"",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1308.03,
+     "end": 1360.38,
+     "speaker": "Gene Kranz",
+     "anchor": "we will leave as a team"
+    }
+   ]
+  },
+  {
+   "id": "q18",
+   "type": "semantic",
+   "query": "what did the flight director promise his controllers before the lunar landing",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1301.15,
+     "end": 1360.38,
+     "speaker": "Gene Kranz",
+     "anchor": "I will stand behind every call you will make"
+    }
+   ]
+  },
+  {
+   "id": "q19",
+   "type": "keyword",
+   "query": "Gemini eight",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1398.97,
+     "end": 1452.15,
+     "speaker": "Gene Kranz",
+     "anchor": "on Gemini eight, we had a serious problem"
+    }
+   ]
+  },
+  {
+   "id": "q20",
+   "type": "phrase",
+   "query": "\"risk is the price of progress\"",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1438.95,
+     "end": 1499.08,
+     "speaker": "Gene Kranz",
+     "anchor": "risk is the price of progress"
+    }
+   ]
+  },
+  {
+   "id": "q21",
+   "type": "semantic",
+   "query": "why he enjoyed decisions having no grey areas",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1466.64,
+     "end": 1527.11,
+     "speaker": "Gene Kranz",
+     "anchor": "There are no shades of gray"
+    }
+   ]
+  },
+  {
+   "id": "q22",
+   "type": "keyword",
+   "query": "crew chief hand salute",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1490.68,
+     "end": 1535.57,
+     "speaker": "Gene Kranz",
+     "anchor": "he'd give me a hand salute"
+    }
+   ]
+  },
+  {
+   "id": "q23",
+   "type": "role",
+   "query": "what did the host ask about tough and competent",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1536.29,
+     "end": 1556.0,
+     "speaker": "Leah Cheshire",
+     "anchor": "What does tough and competent mean to you"
+    }
+   ]
+  },
+  {
+   "id": "q24",
+   "type": "speaker",
+   "query": "what did Kranz say about accountability",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1556.24,
+     "end": 1593.15,
+     "speaker": "Gene Kranz",
+     "anchor": "Tough means accepting accountability"
+    }
+   ]
+  },
+  {
+   "id": "q25",
+   "type": "semantic",
+   "query": "training program for new generations of shuttle flight controllers",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1586.17,
+     "end": 1648.12,
+     "speaker": "Gene Kranz",
+     "anchor": "we established a boot camp"
+    }
+   ]
+  },
+  {
+   "id": "q26",
+   "type": "entity",
+   "query": "special forces in Afghanistan",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1661.07,
+     "end": 1703.59,
+     "speaker": "Gene Kranz",
+     "anchor": "special forces team that adopted that over in Afghanistan"
+    }
+   ]
+  },
+  {
+   "id": "q27",
+   "type": "phrase",
+   "query": "\"failure is not an option\"",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1722.94,
+     "end": 1729.98,
+     "speaker": "Gene Kranz",
+     "anchor": "failure is not an option was created by Hollywood"
+    },
+    {
+     "file": "ep433",
+     "start": 1705.09,
+     "end": 1722.94,
+     "speaker": "Leah Cheshire",
+     "anchor": "failure is not an option"
+    },
+    {
+     "file": "ep433",
+     "start": 1800.77,
+     "end": 1802.45,
+     "speaker": "Leah Cheshire",
+     "anchor": "failure is not an option"
+    }
+   ],
+   "match": "any"
+  },
+  {
+   "id": "q28",
+   "type": "semantic",
+   "query": "how did the famous Apollo 13 movie line come about",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1731.49,
+     "end": 1768.32,
+     "speaker": "Gene Kranz",
+     "anchor": "whose son, he went out to Hollywood"
+    }
+   ]
+  },
+  {
+   "id": "q29",
+   "type": "typo",
+   "query": "Jery Bostik",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1731.49,
+     "end": 1766.08,
+     "speaker": "Gene Kranz",
+     "anchor": "Jerry Bostick, whose son"
+    }
+   ]
+  },
+  {
+   "id": "q30",
+   "type": "entity",
+   "query": "Jim Lovell book",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1731.49,
+     "end": 1775.51,
+     "speaker": "Gene Kranz",
+     "anchor": "Jim Lovell was writing a book"
+    }
+   ]
+  },
+  {
+   "id": "q31",
+   "type": "semantic",
+   "query": "what he actually told the team when the crew's return was in doubt",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1755.8,
+     "end": 1799.97,
+     "speaker": "Gene Kranz",
+     "anchor": "we have never lost an American in space"
+    }
+   ]
+  },
+  {
+   "id": "q32",
+   "type": "role",
+   "query": "what did the guest say about trust",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1556.8,
+     "end": 1616.63,
+     "speaker": "Gene Kranz",
+     "anchor": "trusting each one another"
+    }
+   ]
+  },
+  {
+   "id": "q33",
+   "type": "semantic",
+   "query": "does failure mean never making mistakes or refusing to quit",
+   "relevant": [
+    {
+     "file": "ep433",
+     "start": 1813.97,
+     "end": 1829.62,
+     "speaker": "Leah Cheshire",
+     "anchor": "what does failure mean to you"
+    }
+   ]
+  },
+  {
+   "id": "q34",
+   "type": "entity",
+   "query": "Center for the Advancement of Science in Space",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 240.14,
+     "end": 265.66,
+     "speaker": "Patrick O'Neil",
+     "anchor": "brainchild of the state of Florida"
+    }
+   ]
+  },
+  {
+   "id": "q35",
+   "type": "semantic",
+   "query": "when did the nonprofit begin running the orbiting laboratory",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 240.14,
+     "end": 265.66,
+     "speaker": "Patrick O'Neil",
+     "anchor": "signed our cooperative agreement with NASA"
+    }
+   ]
+  },
+  {
+   "id": "q36",
+   "type": "entity",
+   "query": "Department of Energy national labs",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 317.78,
+     "end": 355.06,
+     "speaker": "Patrick O'Neil",
+     "anchor": "part of the Department of Energy System"
+    }
+   ]
+  },
+  {
+   "id": "q37",
+   "type": "semantic",
+   "query": "why is sending an experiment to orbit so difficult for a scientist",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 321.54,
+     "end": 383.45,
+     "speaker": "Patrick O'Neil",
+     "anchor": "you have to launch it in flight certified hardware"
+    }
+   ]
+  },
+  {
+   "id": "q38",
+   "type": "keyword",
+   "query": "Tetris",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 331.24,
+     "end": 391.91,
+     "speaker": "Patrick O'Neil",
+     "anchor": "play the game of Tetris"
+    }
+   ]
+  },
+  {
+   "id": "q39",
+   "type": "phrase",
+   "query": "\"astronaut proof it\"",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 506.5,
+     "end": 558.69,
+     "speaker": "Patrick O'Neil",
+     "anchor": "astronaut proof it as best you can"
+    }
+   ]
+  },
+  {
+   "id": "q40",
+   "type": "semantic",
+   "query": "who pays for transporting research to and from the station",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 613.99,
+     "end": 675.46,
+     "speaker": "Patrick O'Neil",
+     "anchor": "The ride up, the ride down"
+    }
+   ]
+  },
+  {
+   "id": "q41",
+   "type": "speaker",
+   "query": "what did Gary Jordan say about astronauts running experiments",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 457.9,
+     "end": 506.42,
+     "speaker": "Gary Jordan",
+     "anchor": "You have to hand that over to an astronaut"
+    }
+   ]
+  },
+  {
+   "id": "q42",
+   "type": "entity",
+   "query": "Merck and Eli Lilly",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 744.79,
+     "end": 779.72,
+     "speaker": "Patrick O'Neil",
+     "anchor": "Merck or an Eli Lilly"
+    }
+   ]
+  },
+  {
+   "id": "q43",
+   "type": "keyword",
+   "query": "protein crystallization",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 746.87,
+     "end": 779.72,
+     "speaker": "Patrick O'Neil",
+     "anchor": "focused on protein crystallization"
+    }
+   ]
+  },
+  {
+   "id": "q44",
+   "type": "typo",
+   "query": "Bristol Myers Squib",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 744.79,
+     "end": 779.72,
+     "speaker": "Patrick O'Neil",
+     "anchor": "Bristol Myers Squibb"
+    }
+   ]
+  },
+  {
+   "id": "q45",
+   "type": "role",
+   "query": "what did the host say about being the new kid on the block",
+   "relevant": [
+    {
+     "file": "ep435",
+     "start": 710.93,
+     "end": 744.79,
+     "speaker": "Gary Jordan",
+     "anchor": "you are the new kid on the block"
+    }
+   ]
+  },
+  {
+   "id": "q46",
+   "type": "semantic",
+   "query": "how long does post-flight rehabilitation take for astronauts",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 180.13,
+     "end": 227.9,
+     "speaker": "Suni Williams",
+     "anchor": "about 30 days to 45 days to make sure that we're released"
+    }
+   ]
+  },
+  {
+   "id": "q47",
+   "type": "entity",
+   "query": "United Launch Alliance",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 268.8,
+     "end": 331.46,
+     "speaker": "Suni Williams",
+     "anchor": "working with United Launch Alliance, our launch provider"
+    }
+   ]
+  },
+  {
+   "id": "q48",
+   "type": "semantic",
+   "query": "was the real launch different from the training simulations",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 360.74,
+     "end": 392.54,
+     "speaker": "Suni Williams",
+     "anchor": "it was really close to the sim, actually"
+    }
+   ]
+  },
+  {
+   "id": "q49",
+   "type": "phrase",
+   "query": "\"if you can start it, you can fly it\"",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 474.84,
+     "end": 518.83,
+     "speaker": "Suni Williams",
+     "anchor": "if you can start it, you can fly it"
+    }
+   ]
+  },
+  {
+   "id": "q50",
+   "type": "semantic",
+   "query": "which direction of movement could the spacecraft no longer control near the station",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 571.05,
+     "end": 601.66,
+     "speaker": "Suni Williams",
+     "anchor": "we had lost, uh, one of our degrees of freedom"
+    }
+   ]
+  },
+  {
+   "id": "q51",
+   "type": "speaker",
+   "query": "what did Suni Williams say about flying manually near the station",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 619.18,
+     "end": 681.22,
+     "speaker": "Suni Williams",
+     "anchor": "fly in from 260 meters to 200 meters"
+    }
+   ]
+  },
+  {
+   "id": "q52",
+   "type": "typo",
+   "query": "sublimater isue",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 408.48,
+     "end": 460.22,
+     "speaker": "Suni Williams",
+     "anchor": "our sublimator had a little bit of an issue"
+    }
+   ]
+  },
+  {
+   "id": "q53",
+   "type": "role",
+   "query": "what did the host ask about the problems on the way uphill",
+   "relevant": [
+    {
+     "file": "ep399",
+     "start": 560.89,
+     "end": 570.71,
+     "speaker": "Dane Turner",
+     "anchor": "there were some issues on the way uphill"
+    }
+   ]
+  },
+  {
+   "id": "q54",
+   "type": "entity",
+   "query": "ExoMiner",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 796.37,
+     "end": 842.03,
+     "speaker": "Kevin Murphy",
+     "anchor": "within ExoMiner, where we use data from the Kepler and TESS space telescopes"
+    }
+   ]
+  },
+  {
+   "id": "q55",
+   "type": "semantic",
+   "query": "how does the Mars rover plan its own route",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 847.62,
+     "end": 910.93,
+     "speaker": "Kevin Murphy",
+     "anchor": "that autonomy allows it to kind of avoid obstacles and do route planning in situ"
+    }
+   ]
+  },
+  {
+   "id": "q56",
+   "type": "semantic",
+   "query": "a Soviet rover driven remotely from Earth",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 884.11,
+     "end": 946.56,
+     "speaker": "Kevin Murphy",
+     "anchor": "the Soviet Union drove a rover on the Moon"
+    }
+   ]
+  },
+  {
+   "id": "q57",
+   "type": "phrase",
+   "query": "\"human in the loop\"",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 1004.41,
+     "end": 1063.95,
+     "speaker": "Kevin Murphy",
+     "anchor": "as long as there's a human in the loop"
+    }
+   ]
+  },
+  {
+   "id": "q58",
+   "type": "keyword",
+   "query": "garbage in garbage out",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 1061.67,
+     "end": 1105.69,
+     "speaker": "Kevin Murphy",
+     "anchor": "garbage in, garbage out"
+    }
+   ]
+  },
+  {
+   "id": "q59",
+   "type": "semantic",
+   "query": "should I let an AI chatbot answer my email",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 1135.56,
+     "end": 1176.24,
+     "speaker": "Kevin Murphy",
+     "anchor": "You don't want to set up a chatbot which responds to all your emails"
+    }
+   ]
+  },
+  {
+   "id": "q60",
+   "type": "role",
+   "query": "what did the host say about the Summer of AI",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 1181.49,
+     "end": 1228.64,
+     "speaker": "Nilufar Ramji",
+     "anchor": "NASA did this thing called the Summer of AI"
+    }
+   ]
+  },
+  {
+   "id": "q61",
+   "type": "speaker",
+   "query": "what did Kevin Murphy say about training the workforce",
+   "relevant": [
+    {
+     "file": "ep424",
+     "start": 1230.82,
+     "end": 1265.51,
+     "speaker": "Kevin Murphy",
+     "anchor": "we have a number of opportunities which are primarily discussion-based"
+    }
+   ]
+  },
+  {
+   "id": "q62",
+   "type": "semantic",
+   "query": "is there frozen water on the Moon we could use",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1730.49,
+     "end": 1767.25,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "we have picked up that there's water on the Moon"
+    }
+   ]
+  },
+  {
+   "id": "q63",
+   "type": "keyword",
+   "query": "3D printing with regolith",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1751.51,
+     "end": 1801.3,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "use regolith to do some 3D printing of structures on the Moon"
+    }
+   ]
+  },
+  {
+   "id": "q64",
+   "type": "semantic",
+   "query": "using lasers to build roads on the lunar surface",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1765.02,
+     "end": 1801.3,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "using lasers to modify the regolith"
+    }
+   ]
+  },
+  {
+   "id": "q65",
+   "type": "entity",
+   "query": "helium-3 mining",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1808.56,
+     "end": 1868.41,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "things that we actually want to mine like helium-3"
+    }
+   ]
+  },
+  {
+   "id": "q66",
+   "type": "semantic",
+   "query": "how will the base get electricity at the south pole",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1884.64,
+     "end": 1932.94,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "it's very likely to be solar towers"
+    }
+   ]
+  },
+  {
+   "id": "q67",
+   "type": "keyword",
+   "query": "wireless charging",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1906.93,
+     "end": 1967.94,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "we'd like to make it wireless charging"
+    }
+   ]
+  },
+  {
+   "id": "q68",
+   "type": "typo",
+   "query": "radioisotope heeting units",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 1941.32,
+     "end": 2002.86,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "the radioisotope heating units"
+    }
+   ]
+  },
+  {
+   "id": "q69",
+   "type": "semantic",
+   "query": "how much payload can today's robotic landers carry",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 2053.5,
+     "end": 2116.01,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "in the 500-kilogram payload capacity"
+    }
+   ]
+  },
+  {
+   "id": "q70",
+   "type": "speaker",
+   "query": "what did Carlos say about mission control",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 2212.29,
+     "end": 2247.24,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "when we talk about like mission control"
+    }
+   ]
+  },
+  {
+   "id": "q71",
+   "type": "role",
+   "query": "what did the guest say about cargo deliveries for long missions",
+   "relevant": [
+    {
+     "file": "ep436",
+     "start": 2053.5,
+     "end": 2098.86,
+     "speaker": "Carlos Garcia-Galan",
+     "anchor": "Every block of like 30 days is going to require a good amount of logistics missions"
+    }
+   ]
+  },
+  {
+   "id": "n01",
+   "type": "negative",
+   "query": "Mars helicopter flights",
+   "relevant": []
+  },
+  {
+   "id": "n02",
+   "type": "negative",
+   "query": "recipe for chocolate chip cookies",
+   "relevant": []
+  },
+  {
+   "id": "n03",
+   "type": "negative",
+   "query": "James Webb Space Telescope mirror alignment",
+   "relevant": []
+  },
+  {
+   "id": "n04",
+   "type": "negative",
+   "query": "SpaceX Starship heat shield tiles",
+   "relevant": []
+  },
+  {
+   "id": "n05",
+   "type": "negative",
+   "query": "best coffee brewing methods",
+   "relevant": []
+  }
+ ]
+}

@@ -1,0 +1,5837 @@
+{
+ "keyword (FTS)": {
+  "overall": {
+   "recall@1": 0.7183098591549296,
+   "recall@3": 0.7464788732394366,
+   "recall@5": 0.7605633802816901,
+   "recall@10": 0.7605633802816901,
+   "mrr": 0.7328638497652582,
+   "n": 71
+  },
+  "no_answer_accuracy": 1.0,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 0.8571428571428571,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9285714285714286,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 0.46153846153846156,
+    "recall@3": 0.5,
+    "recall@5": 0.5,
+    "recall@10": 0.5,
+    "mrr": 0.47435897435897434,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.6666666666666666,
+    "recall@3": 0.6666666666666666,
+    "recall@5": 0.8333333333333334,
+    "recall@10": 0.8333333333333334,
+    "mrr": 0.7,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 0.4,
+    "recall@3": 0.4,
+    "recall@5": 0.4,
+    "recall@10": 0.4,
+    "mrr": 0.4,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 11.472999998659361,
+   "p95": 23.917000000437838
+  },
+  "speaker_accuracy": 0.9642857142857143,
+  "misses": [
+   "q02",
+   "q13",
+   "q14",
+   "q15",
+   "q18",
+   "q21",
+   "q28",
+   "q29",
+   "q31",
+   "q35",
+   "q37",
+   "q41",
+   "q46",
+   "q50",
+   "q52",
+   "q56",
+   "q66"
+  ],
+  "false_answers": [],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 0.3333333333333333,
+    "first_rank": 3,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 0.2,
+    "first_rank": 5,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   }
+  ]
+ },
+ "fuzzy (trigram)": {
+  "overall": {
+   "recall@1": 0.6338028169014085,
+   "recall@3": 0.6338028169014085,
+   "recall@5": 0.6338028169014085,
+   "recall@10": 0.6338028169014085,
+   "mrr": 0.6338028169014085,
+   "n": 71
+  },
+  "no_answer_accuracy": 1.0,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 0.8571428571428571,
+    "recall@3": 0.8571428571428571,
+    "recall@5": 0.8571428571428571,
+    "recall@10": 0.8571428571428571,
+    "mrr": 0.8571428571428571,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 0.07692307692307693,
+    "recall@3": 0.07692307692307693,
+    "recall@5": 0.07692307692307693,
+    "recall@10": 0.07692307692307693,
+    "mrr": 0.07692307692307693,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 0.8333333333333334,
+    "recall@5": 0.8333333333333334,
+    "recall@10": 0.8333333333333334,
+    "mrr": 0.8333333333333334,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 57.08839999897464,
+   "p95": 152.78399999988324
+  },
+  "speaker_accuracy": 0.9787234042553191,
+  "misses": [
+   "q02",
+   "q04",
+   "q05",
+   "q07",
+   "q09",
+   "q13",
+   "q15",
+   "q18",
+   "q21",
+   "q25",
+   "q28",
+   "q31",
+   "q33",
+   "q35",
+   "q37",
+   "q40",
+   "q41",
+   "q46",
+   "q48",
+   "q50",
+   "q56",
+   "q59",
+   "q64",
+   "q66",
+   "q69",
+   "q71"
+  ],
+  "false_answers": [],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 0.0,
+    "first_rank": null,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 0.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   }
+  ]
+ },
+ "vector (gemini)": {
+  "overall": {
+   "recall@1": 0.9014084507042254,
+   "recall@3": 0.971830985915493,
+   "recall@5": 0.971830985915493,
+   "recall@10": 1.0,
+   "mrr": 0.9380281690140845,
+   "n": 71
+  },
+  "no_answer_accuracy": 0.0,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 0.8888888888888888,
+    "recall@3": 0.8888888888888888,
+    "recall@5": 0.8888888888888888,
+    "recall@10": 1.0,
+    "mrr": 0.9,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 0.8571428571428571,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9285714285714286,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 0.7142857142857143,
+    "recall@3": 0.8571428571428571,
+    "recall@5": 0.8571428571428571,
+    "recall@10": 1.0,
+    "mrr": 0.7857142857142857,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 0.9230769230769231,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9615384615384616,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9166666666666666,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 31.961800001226948,
+   "p95": 52.88310000105412
+  },
+  "speaker_accuracy": 0.9726027397260274,
+  "misses": [],
+  "false_answers": [
+   "n01",
+   "n02",
+   "n03",
+   "n04",
+   "n05"
+  ],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 0.1,
+    "first_rank": 10,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 0.16666666666666666,
+    "first_rank": 6,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 0.3333333333333333,
+    "first_rank": 3,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 8
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 6
+   }
+  ]
+ },
+ "hybrid, children ungrouped (gemini)": {
+  "overall": {
+   "recall@1": 0.9436619718309859,
+   "recall@3": 0.971830985915493,
+   "recall@5": 0.9859154929577465,
+   "recall@10": 1.0,
+   "mrr": 0.9636150234741784,
+   "n": 71
+  },
+  "no_answer_accuracy": 0.0,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 0.8846153846153846,
+    "recall@3": 0.9230769230769231,
+    "recall@5": 0.9615384615384616,
+    "recall@10": 1.0,
+    "mrr": 0.9198717948717948,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9166666666666666,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 25.17269999952987,
+   "p95": 103.3767999997508
+  },
+  "speaker_accuracy": 0.958904109589041,
+  "misses": [],
+  "false_answers": [
+   "n01",
+   "n02",
+   "n03",
+   "n04",
+   "n05"
+  ],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 0.16666666666666666,
+    "first_rank": 6,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 0.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 0.25,
+    "first_rank": 4,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   }
+  ]
+ },
+ "hybrid (gemini)": {
+  "overall": {
+   "recall@1": 0.9436619718309859,
+   "recall@3": 0.971830985915493,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.9647887323943662,
+   "n": 71
+  },
+  "no_answer_accuracy": 0.0,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 0.8846153846153846,
+    "recall@3": 0.9230769230769231,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9230769230769231,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.9166666666666666,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 38.954999999987194,
+   "p95": 129.38190000022587
+  },
+  "speaker_accuracy": 0.958904109589041,
+  "misses": [],
+  "false_answers": [
+   "n01",
+   "n02",
+   "n03",
+   "n04",
+   "n05"
+  ],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 0.25,
+    "first_rank": 4,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 0.25,
+    "first_rank": 4,
+    "recall@1": 0.0,
+    "recall@3": 0.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 8
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 10
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 6
+   }
+  ]
+ },
+ "hybrid+rerank (gemini)": {
+  "overall": {
+   "recall@1": 0.9577464788732394,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.9765258215962441,
+   "n": 71
+  },
+  "no_answer_accuracy": 0.8,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 0.7142857142857143,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.8571428571428571,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.8888888888888888,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 39.678200000707875,
+   "p95": 100.90900000068359
+  },
+  "speaker_accuracy": 0.9726027397260274,
+  "misses": [],
+  "false_answers": [
+   "n01"
+  ],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.3333333333333333,
+    "first_rank": 3,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 3
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   }
+  ]
+ },
+ "hybrid+rerank+mmr (gemini)": {
+  "overall": {
+   "recall@1": 0.9577464788732394,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.9765258215962441,
+   "n": 71
+  },
+  "no_answer_accuracy": 0.8,
+  "by_type": {
+   "entity": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 11
+   },
+   "keyword": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 9
+   },
+   "phrase": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 7
+   },
+   "role": {
+    "recall@1": 0.7142857142857143,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.8571428571428571,
+    "n": 7
+   },
+   "semantic": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 26
+   },
+   "speaker": {
+    "recall@1": 0.8333333333333334,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 0.8888888888888888,
+    "n": 6
+   },
+   "typo": {
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0,
+    "mrr": 1.0,
+    "n": 5
+   }
+  },
+  "latency_ms": {
+   "p50": 78.15080000000307,
+   "p95": 168.18360000070243
+  },
+  "speaker_accuracy": 0.9726027397260274,
+  "misses": [],
+  "false_answers": [
+   "n01"
+  ],
+  "rerank_skipped": 0,
+  "per_query": [
+   {
+    "id": "q01",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q02",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q03",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q04",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q05",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q06",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q07",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q08",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q09",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q10",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q11",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q12",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q13",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q14",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q15",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q16",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q17",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q18",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q19",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q20",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q21",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q22",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q23",
+    "type": "role",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q24",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q25",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q26",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q27",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1,
+    "recall@3": 1,
+    "recall@5": 1,
+    "recall@10": 1
+   },
+   {
+    "id": "q28",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q29",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q30",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q31",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q32",
+    "type": "role",
+    "rr": 0.5,
+    "first_rank": 2,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q33",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q34",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q35",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q36",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q37",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q38",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q39",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q40",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q41",
+    "type": "speaker",
+    "rr": 0.3333333333333333,
+    "first_rank": 3,
+    "recall@1": 0.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q42",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q43",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q44",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q45",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q46",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q47",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q48",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q49",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q50",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q51",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q52",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q53",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q54",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q55",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q56",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q57",
+    "type": "phrase",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q58",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q59",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q60",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q61",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q62",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q63",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q64",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q65",
+    "type": "entity",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q66",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q67",
+    "type": "keyword",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q68",
+    "type": "typo",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q69",
+    "type": "semantic",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q70",
+    "type": "speaker",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "q71",
+    "type": "role",
+    "rr": 1.0,
+    "first_rank": 1,
+    "recall@1": 1.0,
+    "recall@3": 1.0,
+    "recall@5": 1.0,
+    "recall@10": 1.0
+   },
+   {
+    "id": "n01",
+    "type": "negative",
+    "negative": true,
+    "no_answer": false,
+    "returned": 3
+   },
+   {
+    "id": "n02",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n03",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n04",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   },
+   {
+    "id": "n05",
+    "type": "negative",
+    "negative": true,
+    "no_answer": true,
+    "returned": 0
+   }
+  ]
+ }
+}

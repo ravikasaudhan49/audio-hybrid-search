@@ -1,0 +1,14 @@
+psycopg[binary]>=3.2
+pgvector>=0.3
+sentence-transformers>=3.0
+numpy
+httpx
+python-dotenv
+imageio-ffmpeg
+pytest
+streamlit
+fastapi
+uvicorn
+python-multipart
+psycopg-pool
+tiktoken
