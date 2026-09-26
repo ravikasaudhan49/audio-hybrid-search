@@ -17,7 +17,7 @@ answer on top.
 | **Tests** | 71 automated tests incl. a recall@k quality gate (`python -m audiosearch test`) |
 
 Architecture diagrams and the data model: **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
-Coding-agent disclosure (how the agent was directed, decision by decision): **[AGENT_LOG.md](AGENT_LOG.md)**.
+Coding-agent disclosure (how the agent was directed): **[§10](#10-coding-agent-disclosure)**, [`CLAUDE.md`](CLAUDE.md), [`docs/adr/`](docs/adr/README.md).
 
 ## 🏢 Built for production: multi-tenant knowledge bases, designed to scale
 
@@ -149,7 +149,7 @@ library of transcripts, the evaluation dashboard, and a collection picker.
 | **3. Local solution; transcripts generated; results show file, timestamp, speaker** | Postgres/pgvector, the API, UI and search all run locally (Docker + Python). Transcripts are generated per file (AssemblyAI / Deepgram, allowed to be hosted). Each hit shows the **file, the exact second the matched word was spoken, and the speaker's name**, with the matched words highlighted. ⚠ Embeddings: see [§9](#9-limitations). |
 | **4. Automated tests measuring recall@k against a labeled query set** | 76-query golden set with transcript-anchored labels; `eval/evaluate.py` reports recall@1/3/5/10, MRR, no-answer accuracy and speaker accuracy per configuration and query type; `tests/test_recall.py` **fails the build** if recall@5 < 0.90, recall@10 < 0.95, off-topic handling < 0.75 or speaker accuracy < 0.95. |
 | Design, rationale, success criteria, achievement, limitations | This README |
-| Coding-agent disclosure | [§10](#10-coding-agent-disclosure) and [AGENT_LOG.md](AGENT_LOG.md) |
+| Coding-agent disclosure | [§10](#10-coding-agent-disclosure), [`CLAUDE.md`](CLAUDE.md), [`docs/adr/`](docs/adr/README.md) |
 | Code, golden dataset and tests in a repository | This repository: `data/` (clips, transcripts, manifest, golden spec and labels), `tests/`, `eval/` |
 
 ---
@@ -205,8 +205,8 @@ query ─► speaker/role detection ("what did Jordan / the guest say about X")
 
 ## 4. Decision log: the major architectural changes and why
 
-Chronological. Each change was driven by a measurement, a test or a failed assumption. Full traces:
-[AGENT_LOG.md](AGENT_LOG.md).
+Chronological. Each change was driven by a measurement, a test or a failed assumption. Details:
+[`docs/adr/`](docs/adr/README.md).
 
 | # | Decision | Why |
 |---|---|---|
@@ -284,21 +284,6 @@ Recall@5 by query type (keyword-only → hybrid+rerank): semantic 0.46 → 0.96,
 speaker 0.83 → 1.00; entity, keyword and phrase are 1.00 for both. Not at rank 1: q23, q32 (rank 2),
 q41 (rank 3). One false answer: n01 "Mars helicopter flights" (ep424 discusses Mars rover
 autonomy, and the reranker scores it above the cut-off). This is reported, not tuned away.
-
-### Transcription quality (ASR): how it was checked
-Retrieval is only as good as the transcript, so ASR output was checked before relying on it:
-* **Speaker separation:** every episode came back with exactly 2 speakers; turn-by-turn reading of
-  all 6 clips (while writing the golden queries) found the speaker changes in the right places;
-  1–3 diarization flips per episode were smoothed automatically.
-* **Speaker names** (AssemblyAI Speaker Identification): identified from context alone, with no names
-  supplied, and correct for all 6 speaker pairs when checked against the episode intros. One
-  formatting artefact ("Carlos Garcia-Galan - 1") was corrected in the manifest.
-* **Word accuracy:** provider confidence 0.97–0.999. Reading the clips found isolated errors on
-  proper names and fast speech: *Krantz* / *Kranz*, *"tough incompetent"* for *"failure is not an
-  option"*, and the host name **"Leah Cheshire"**, which NASA's official page spells **"Cheshier"**.
-  The retrieval side is built to tolerate this (trigram typo ranker, keyterm prompting, semantic
-  search).
-
 
 ---
 
@@ -397,7 +382,6 @@ with idempotent file ids (already content-hashed).
 | [`CLAUDE.md`](CLAUDE.md) | Standing rules the owner gave the agent: architecture constraints, API budget rules, evaluation rules, definition of done |
 | [`.claude/skills/`](.claude/skills) | Reusable workflows the agent follows step by step: [`golden-eval`](.claude/skills/golden-eval/SKILL.md) (add queries → build labels → evaluate → investigate misses → report), [`add-episode`](.claude/skills/add-episode/SKILL.md) (golden clip or upload) |
 | [`docs/adr/`](docs/adr/README.md) | Architecture Decision Records: the owner's major decisions with context, options and evidence |
-| [`AGENT_LOG.md`](AGENT_LOG.md) | Prompt-by-prompt trace: what was asked, what the agent proposed and did, how it was verified |
 | `tests/` + `ruff` + `eval` | Guardrails: the agent's work counts as done only when lint, the tests and the recall@k gate pass |
 
 `CLAUDE.md` and the skills codify the rules and workflows used throughout development; they were
@@ -413,7 +397,7 @@ reported findings for the owner to act on. How it was directed:
 * **Requirements came as prompts** at each step ("plan what is asked", "make it async and scalable",
   "child 128 / parent 512 tokens, embeddings on child text, dedup by parent_id", "use AssemblyAI to
   get speaker names", "collections like MongoDB", "add a summary answer", "p50/p90/p99 at
-  concurrency 5"). Each prompt and the agent's response is logged in **[AGENT_LOG.md](AGENT_LOG.md)**.
+  concurrency 5"). The standing rules are in [`CLAUDE.md`](CLAUDE.md); the decisions in [`docs/adr/`](docs/adr/README.md).
 * **Owner-led design decisions:** hybrid search with reranking and MMR; hosted Gemini embeddings
   (1536-d); Deepgram, then AssemblyAI for speaker names; the parent-child chunking scheme with its
   `parent_id` deduplication; the asynchronous backend/frontend split; collections per tenant; the

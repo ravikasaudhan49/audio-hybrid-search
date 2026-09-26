@@ -9,7 +9,7 @@
 | 3 | Local hybrid search; transcripts from audio; results show **file, timestamp, speaker** | Ingest pipeline + Postgres/pgvector + CLI (and small web UI) |
 | 4 | Automated tests measuring **recall@k** on a labeled query set | `data/queries.json` + `pytest` eval suite |
 | — | Write-up: design, rationale, success criteria, achievement vs criteria, limitations, **production metrics & evaluation** | `README.md` |
-| — | Coding-agent disclosure: how we prompted / directed the agent | `AGENT_LOG.md` (kept as we go) |
+| — | Coding-agent disclosure: how we prompted / directed the agent | README §10 |
 | — | Public GitHub repo with code, golden dataset, tests | GitHub |
 
 Constraints: Python or TypeScript; RDBMS with vectors (Postgres + pgvector). **Embeddings + indexing must be local.** Transcription may be hosted.
@@ -90,4 +90,4 @@ Scale notes: partitioning, HNSW params (m, ef_search), embedding-model versionin
 5. Keyword, semantic, RRF, highlight; CLI.
 6. Label queries; eval harness + pytest; tune chunk size / fusion / rerank with data.
 7. Web UI (nice-to-have).
-8. README write-up + AGENT_LOG.md, push to GitHub.
+8. README write-up, push to GitHub.

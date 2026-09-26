@@ -2,7 +2,7 @@
 
 These are the standing instructions the project owner gave the coding agent (Claude Code) during
 development, codified in one place. Any agent or contributor must follow them. Decisions behind
-the rules are recorded in `docs/adr/`; the prompt-by-prompt trace is in `AGENT_LOG.md`.
+the rules are recorded in `docs/adr/`.
 
 ## What this project is
 Hybrid (keyword + semantic) search over two-speaker podcast audio. Results must show the **file,
@@ -42,7 +42,7 @@ the timestamp of the matched word, and the speaker's name**. See `README.md` and
 * Golden labels come **only** from `data/golden_spec.json` anchors (verbatim transcript quotes)
   via `python -m eval.build_golden`; never hand-type timestamps.
 * Never tune thresholds or labels to make a specific query pass. If a label is wrong, fix the
-  labelling *method*, re-run everything, and log the before/after numbers in `AGENT_LOG.md`.
+  labelling *method*, re-run everything, and report the before/after numbers.
 * Evaluation searches `origin=golden` only.
 
 ## Definition of done (run before claiming a change works)
@@ -58,4 +58,4 @@ For performance changes, run `python -m audiosearch bench` and report p50/p90/p9
 * Python 3.12+, ruff (line length 120), type hints, small functions, docstrings that explain *why*.
 * Logging via `audiosearch.log.get(__name__)`; every line carries the request / job id; never log keys.
 * Secrets only in `.env` (git-ignored); `.env.example` lists every key.
-* Every user-visible change gets an `AGENT_LOG.md` entry: the prompt, what was done, how it was verified.
+* Every significant design change gets an ADR in `docs/adr/`; every change states how it was verified.
