@@ -13,3 +13,4 @@ Each was decided by the project owner.
 | [ADR-0006](0006-one-connection-per-search.md) | One DB connection per search; no pipeline mode |
 | [ADR-0007](0007-collections-as-schemas.md) | Collections as Postgres schemas |
 | [ADR-0008](0008-anchored-golden-labels.md) | Golden labels anchored to transcript quotes |
+| [ADR-0009](0009-layered-package-structure.md) | Layered packages, factories and a composition root |

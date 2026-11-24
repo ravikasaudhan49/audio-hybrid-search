@@ -14,12 +14,10 @@ flowchart LR
         JOBS["Background jobs<br/>transcribe · index · eval"]
     end
     subgraph Core["audiosearch library (async core)"]
-        TR["transcribe.py<br/>provider-neutral transcripts"]
-        SEG["segment.py<br/>speaker clean-up · parent/child chunks"]
-        EMB["embed.py<br/>Gemini / local BGE"]
-        SRCH["search.py<br/>rankers · RRF · group · rerank · MMR"]
-        QRY["query.py<br/>speaker / role detection"]
-        ANS["answer.py<br/>grounded summary"]
+        TR["ingestion/<br/>audio · transcription · chunking · storage"]
+        EMB["embeddings/<br/>Gemini"]
+        SRCH["retrieval/<br/>query parser · rankers · RRF · group · rerank · MMR"]
+        ANS["retrieval/answer.py<br/>grounded summary"]
     end
     subgraph Local["Local infrastructure (Docker)"]
         PG[("Postgres 17<br/>pgvector · pg_trgm · FTS<br/>one schema per collection")]
@@ -51,6 +49,41 @@ flowchart LR
   `data/transcripts/`: raw and normalized ASR output), so re-runs are free and reproducible.
 * **Logs:** one rotating text file per process in `logs/`; every line carries a request or job id.
 
+### Code structure (ADR-0009)
+
+```
+audiosearch/
+  core/           settings.py (Settings singleton) · log.py · runtime.py (event loop, shared HTTP client)
+                  cache.py (JsonDiskCache) · errors.py · text.py · progress.py (Reporter)
+  models.py       domain dataclasses: Word, Parent, Child, Filters, SearchRequest, Result, SearchOutput, ...
+  db/             database.py (pool, collections, collection_conn) · repositories.py (all SQL) · schema.sql
+  ingestion/      INGESTION PIPELINE: audio -> transcript -> chunks -> Postgres -> vectors
+    pipeline.py     IngestionService (steps in order), Manifest
+    audio.py        ffmpeg normalize
+    transcription/  base.py · assemblyai.py · deepgram.py · store.py (transcript cache)
+    chunking/       params.py (the contract) · tokens.py · speakers.py · chunker.py
+  retrieval/      RETRIEVAL PIPELINE: query -> rankers -> fusion -> rerank -> threshold -> MMR -> answer
+    pipeline.py     SearchService (steps in order), SpeakerNameCache
+    query_parser.py · rankers.py · fusion.py · highlight.py
+    rerankers/      base.py · cohere.py · local.py
+    answer.py       AnswerService (grounded summary)
+  embeddings/     shared by both pipelines: base.py · gemini.py
+  evaluation/     golden.py · labels.py (GoldenLabelBuilder) · evaluator.py (Evaluator)
+  container.py    AppContainer: builds the embedder, reranker and transcriber once; creates the services
+  cli/            main.py (parser, command table) · commands.py (one handler per command)
+backend/          main.py (create_app) · dependencies.py · middleware.py · jobs.py (JobManager)
+                  schemas.py · routers/ (health, collections, search, files, uploads, jobs, evaluation)
+frontend/         app.py (navigation) · client.py · sidebar.py · context.py · components.py · views/
+eval/             thin entry points: build_golden, evaluate, bench, report
+```
+
+* **Chosen once:** when the app starts, `AppContainer` reads `.env` and builds the embedder, reranker
+  and transcriber (a plain `if name == ...` in `container.py`). Every service receives these objects
+  in its constructor; nothing else picks a provider. API keys are checked on first use, so the app
+  starts without them (keyword search still works).
+* **One of each:** `get_settings()` reads `.env` once; one `AppContainer` per process; one HTTP client per event loop.
+* **Tests** pass their own objects: `AppContainer(settings, embedder=FakeEmbedder())`; no monkeypatching.
+
 ## 2. Ingestion
 
 ```mermaid
@@ -75,7 +108,7 @@ flowchart TD
 sequenceDiagram
     participant U as UI / client
     participant A as API /search
-    participant Q as query.py
+    participant Q as retrieval/query_parser.py
     participant G as Gemini (cached)
     participant P as Postgres (1 pooled connection)
     participant C as Cohere (cached)
@@ -140,23 +173,23 @@ erDiagram
 ```
 
 `public.collections(name, description, created_at)` registers the collections; every collection is
-created from the same `audiosearch/schema.sql`, so columns are identical. Queries select a
+created from the same `audiosearch/db/schema.sql`, so columns are identical. Queries select a
 collection with `search_path`, and the path is reset when the connection returns to the pool.
 
-## 5. Key parameters (`audiosearch/config.py`, overridable in `.env`)
+## 5. Key parameters (`audiosearch/core/settings.py`, overridable in `.env`; chunking in `audiosearch/ingestion/chunking/params.py`)
 
 | Parameter | Value | Why |
 |---|---|---|
-| `CHILD_TOKENS` / overlap / `PARENT_TOKENS` | 128 / 25 / 512 (tiktoken cl100k) | ~40–60 s children in one speaker's turn; 2–3 min parents keep a question and its answer together |
-| `MIN_CHILD_WORDS` | 3 | backchannels ("Right.") stay in the parent, not as results |
+| `child_tokens` / overlap / `parent_tokens` | 128 / 25 / 512 (tiktoken cl100k) | ~40–60 s children in one speaker's turn; 2–3 min parents keep a question and its answer together |
+| `min_child_words` | 3 | backchannels ("Right.") stay in the parent, not as results |
 | RRF k, weights | 60; keyword 1.0, vector 1.0, fuzzy 0.5 | rank-only fusion; typo ranker down-weighted |
 | `FUZZY_MAX_TERMS` | 4 | trigram only for short lookups (measured ~30 ms scan, 0 semantic recall) |
 | `VECTOR_MIN_SIM` | 0.50 | safety floor; cosine doesn't separate relevant from irrelevant (measured) |
 | `RERANK_MIN_SCORE` / `_RELATIVE` | 0.40 / 0.5 × best | calibrated: answers 0.64–0.97, junk 0.26–0.30 |
-| `RERANK_DEPTH` | 30 | candidates re-scored per query |
-| `MMR_LAMBDA` | 0.6 | relevance versus diversity when MMR is on |
+| `rerank_depth` | 30 | candidates re-scored per query |
+| `mmr_lambda` | 0.6 | relevance versus diversity when MMR is on |
 | `DB_POOL_MIN/MAX` | 2 / 10 | one connection per search, held for milliseconds |
-| `EMBEDDER` / dims | gemini-embedding-001 / 1536 | HNSW supports ≤ 2000 dims; `bge-base` for local |
+| `EMBEDDER` / dims | gemini-embedding-001 / 1536 | HNSW supports ≤ 2000 dims; the only embedder (hosted) |
 | `ANSWER_MODEL` | gemini-3.5-flash-lite | 2.5-flash-lite is no longer available to new users |
 
 ## 6. Multi-tenancy and scaling

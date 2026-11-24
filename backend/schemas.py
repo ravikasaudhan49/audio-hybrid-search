@@ -1,5 +1,16 @@
-"""API request/response models (these also drive the OpenAPI docs at /docs)."""
+"""API request/response models (these also drive the OpenAPI docs at /docs).
+
+These are the HTTP shapes; the library's own types are in audiosearch/models.py and are
+converted here (`SearchResult.from_result`, `FileInfo.from_record`).
+"""
 from pydantic import BaseModel, Field
+
+from audiosearch.models import FileRecord, Result
+
+
+def stream_url(file_id: str, collection: str) -> str:
+    """Local clip stream (supports HTTP range requests, so players can seek)."""
+    return f"/files/{file_id}/audio?collection={collection}"
 
 
 class SearchResult(BaseModel):
@@ -29,6 +40,18 @@ class SearchResult(BaseModel):
     parent_text: str                 # ~512-token dialogue around the child ("Host: ...\nGuest: ...")
     grouped: int                     # matching children collapsed into this result
     relevant: bool | None = None     # set when the query is a labeled golden query
+
+    @classmethod
+    def from_result(cls, r: Result, collection: str, relevant: bool | None = None) -> "SearchResult":
+        return cls(segment_id=r.segment_id, file_id=r.file_id, file_title=r.file_title, speaker=r.speaker,
+                   start_s=r.start_s, end_s=r.end_s, hit_s=r.hit_s, timestamp=r.timestamp,
+                   episode_start_s=r.episode_start_s, episode_end_s=r.episode_end_s, episode_hit_s=r.episode_hit_s,
+                   child_text=r.child_text, highlighted=r.highlighted, score=r.score, sources=r.sources,
+                   audio_url=r.audio_url, stream_url=stream_url(r.file_id, collection),
+                   source_offset_s=r.source_offset_s, parent_id=r.parent_id, parent_start_s=r.parent_start_s,
+                   parent_end_s=r.parent_end_s, parent_episode_start_s=r.parent_episode_start_s,
+                   parent_episode_end_s=r.parent_episode_end_s, parent_text=r.parent_text, grouped=r.grouped,
+                   relevant=relevant)
 
 
 class AnswerOut(BaseModel):
@@ -77,6 +100,12 @@ class FileInfo(BaseModel):
     stream_url: str                  # local clip stream
     source_offset_s: float           # clip start in the episode; turn times below are episode time
 
+    @classmethod
+    def from_record(cls, f: FileRecord, collection: str) -> "FileInfo":
+        return cls(id=f.id, title=f.title, origin=f.origin, duration_s=f.duration_s, audio_url=f.audio_url,
+                   source_offset_s=f.source_offset_s, speakers=f.speakers, segments=f.segments,
+                   stream_url=stream_url(f.id, collection))
+
 
 class FileDetail(FileInfo):
     turns: list[Turn]
@@ -104,8 +133,7 @@ class Health(BaseModel):
     segments: int
     embeddings: dict[str, int]       # model -> vector count
     embedding_dims: dict[str, int]   # model -> vector dimensions
-    default_embedder: str
-    embedders: list[str]
+    embedding_model: str             # e.g. "gemini-embedding-001": the model searches use
     reranker: str
     rerank_default: bool
     pool: dict[str, int]             # connection pool stats: size, available, requests waiting
@@ -126,5 +154,4 @@ class IndexRequest(BaseModel):
     title: str
     speakers: dict[int, str]         # diarization label -> display name
     host: int | None = 0             # label of the host; the other speaker is the guest
-    embedder: str | None = None
     collection: str | None = None    # target collection (default: DEFAULT_COLLECTION)

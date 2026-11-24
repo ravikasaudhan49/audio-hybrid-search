@@ -2,20 +2,26 @@
 so it spends no API quota: chunk -> store (parent + child rows) -> embed -> search ->
 parent grouping. Runs in its own throwaway collection (dropped afterwards), which also
 checks that collections are isolated. Skipped when the database is unreachable."""
+import dataclasses
 import hashlib
 
 import numpy as np
+import psycopg
 import pytest
 
-from audiosearch import aio, config, db, embed
-from audiosearch.ingest import embed_missing, save_file
-from audiosearch.search import Searcher
+from audiosearch.container import AppContainer
+from audiosearch.core import runtime
+from audiosearch.core.settings import get_settings
+from audiosearch.db import Database, collection_conn, schema_name
+from audiosearch.embeddings import Embedder
+from audiosearch.ingestion.chunking import CHUNKING
+from audiosearch.models import SearchRequest
 
 FILE_ID = "test_pipeline"
 COLLECTION = "test_pipeline"
 
 
-class FakeEmbedder(embed.Embedder):
+class FakeEmbedder(Embedder):
     """Deterministic bag-of-words hashing into config-sized vectors: similar words -> similar vectors."""
     name = "fake-test"
     dim = 1536
@@ -53,17 +59,21 @@ def transcript() -> dict:
 
 
 async def _run(cache_dir):
-    config.CACHE_DIR = cache_dir          # keep fake query vectors out of the real cache
-    embed._embedders["fake"] = FakeEmbedder()
-    pool = await db.open_pool(min_size=1, max_size=4)
-    await db.create_collection(pool, COLLECTION, "pytest scratch collection")
+    # A container on a copy of the settings with its own cache dir, and a fake embedder
+    # installed in the factory: no monkeypatching, no API calls.
+    fake = FakeEmbedder()
+    app = AppContainer(dataclasses.replace(get_settings(), cache_dir=cache_dir), embedder=fake)
+    await app.start(min_size=1, max_size=4)
+    pool = app.pool
+    await app.collections.create(COLLECTION, "pytest scratch collection")
     try:
-        n = await save_file(pool, FILE_ID, "pipeline test", f"{FILE_ID}.mp3", transcript(),
-                            {0: "Maya Lin", 1: "Omar Diaz"}, origin="upload",  # labels renumber by first appearance
-                            audio_url="https://media.example.com/podcasts/test.mp3", offset_s=1290.0,
-                            roles={0: "host", 1: "guest"}, collection=COLLECTION)
-        await embed_missing(pool, "fake", collection=COLLECTION)
-        async with db.collection_conn(pool, COLLECTION) as conn:
+        ingestion = app.ingestion(COLLECTION)
+        n = await ingestion.save_file(FILE_ID, "pipeline test", f"{FILE_ID}.mp3", transcript(),
+                                      {0: "Maya Lin", 1: "Omar Diaz"}, origin="upload",  # labels renumber
+                                      audio_url="https://media.example.com/podcasts/test.mp3", offset_s=1290.0,
+                                      roles={0: "host", 1: "guest"})
+        await ingestion.embed_missing()
+        async with collection_conn(pool, COLLECTION) as conn:
             cur = await conn.execute(
                 "SELECT count(DISTINCT parent_id), min(child_tokens), max(child_tokens), max(parent_tokens) "
                 "FROM segments WHERE file_id=%s", (FILE_ID,))
@@ -72,41 +82,40 @@ async def _run(cache_dir):
                 "SELECT vector_dims(e.embedding) FROM embeddings e JOIN segments s ON s.id=e.segment_id "
                 "WHERE s.file_id=%s LIMIT 1", (FILE_ID,))
             dims = (await cur.fetchone())[0]
-        s = Searcher(pool, "fake", collection=COLLECTION)
+        s = app.searcher(COLLECTION)
+
+        def q(text, **kw):
+            return SearchRequest(text, rerank=False, **kw)
+
         # isolation: the same search in the golden collection never sees the scratch file
-        other = await Searcher(pool, "fake").search("reciprocal rank fusion", k=50, rerank=False)
+        other = await app.searcher().search(q("reciprocal rank fusion", k=50))
         leaked = [r for r in other.results if r.file_id == FILE_ID]
-        grouped = await s.search("reciprocal rank fusion", k=5, file_id=FILE_ID, rerank=False, group=True)
-        ungrouped = await s.search("reciprocal rank fusion", k=5, file_id=FILE_ID, rerank=False, group=False)
-        bakery = await s.search("sourdough bakery", k=1, file_id=FILE_ID, rerank=False)
-        by_role = await s.search("what did the guest say about rank fusion", k=5, file_id=FILE_ID, rerank=False)
-        by_name = await s.search("what did Omar say about sourdough", k=5, file_id=FILE_ID, rerank=False)
+        grouped = await s.search(q("reciprocal rank fusion", k=5, file_id=FILE_ID, group=True))
+        ungrouped = await s.search(q("reciprocal rank fusion", k=5, file_id=FILE_ID, group=False))
+        bakery = await s.search(q("sourdough bakery", k=1, file_id=FILE_ID))
+        by_role = await s.search(q("what did the guest say about rank fusion", k=5, file_id=FILE_ID))
+        by_name = await s.search(q("what did Omar say about sourdough", k=5, file_id=FILE_ID))
         return n, parents, min_ct, max_ct, max_pt, dims, grouped, ungrouped, bakery, by_role, by_name, leaked
     finally:
         async with pool.connection() as conn:
-            await conn.execute(f"DROP SCHEMA IF EXISTS {db.schema_name(COLLECTION)} CASCADE")
+            await conn.execute(f"DROP SCHEMA IF EXISTS {schema_name(COLLECTION)} CASCADE")
             await conn.execute("DELETE FROM public.collections WHERE name=%s", (COLLECTION,))
-        await pool.close()
-        embed._embedders.pop("fake", None)
+        await app.close()
 
 
 @pytest.fixture(scope="module")
 def run(tmp_path_factory):
     try:
-        aio.run(db.init_schema())
-    except OSError as e:
+        runtime.run(Database().init_schema())
+    except (OSError, psycopg.OperationalError) as e:
         pytest.skip(f"database unavailable: {e}")
-    real_cache = config.CACHE_DIR
-    try:
-        return aio.run(_run(tmp_path_factory.mktemp("cache")))
-    finally:
-        config.CACHE_DIR = real_cache
+    return runtime.run(_run(tmp_path_factory.mktemp("cache")))
 
 
 def test_rows_have_child_and_parent_and_1536_dim_vectors(run):
     n, parents, _, max_ct, max_pt, dims, *_ = run
     assert n >= 3 and parents >= 1
-    assert max_ct <= config.CHILD_TOKENS + 20 and max_pt <= config.PARENT_TOKENS + 20
+    assert max_ct <= CHUNKING.child_tokens + 20 and max_pt <= CHUNKING.parent_tokens + 20
     assert dims == 1536
 
 

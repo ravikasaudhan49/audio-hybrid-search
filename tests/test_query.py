@@ -1,8 +1,9 @@
 """Speaker/role detection in queries and the relevance threshold (no API, no DB)."""
 import pytest
 
-from audiosearch.query import parse
-from audiosearch.search import Result, apply_thresholds
+from audiosearch.models import Result
+from audiosearch.retrieval.fusion import apply_thresholds
+from audiosearch.retrieval.query_parser import parse
 
 SPEAKERS = ["Gary Jordan", "Abba Zubair", "Leah Cheshire", "Gene Kranz", "Patrick O'Neil"]
 

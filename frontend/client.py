@@ -59,10 +59,11 @@ class Client:
         return self._req("POST", "/collections", json={"name": name, "description": description})
 
     def search(self, q, method="hybrid", k=5, speaker=None, file_id=None, rerank=True, mmr=False,
-               mmr_lambda=0.7, group=True, embedder=None, role=None, auto_speaker=True, threshold=True,
+               mmr_lambda=None, group=True, role=None, auto_speaker=True, threshold=True,
                collection=None, answer=False):
+        """None values are left out, so the server's defaults apply (e.g. mmr_lambda)."""
         params = {"q": q, "method": method, "k": k, "rerank": rerank, "mmr": mmr, "mmr_lambda": mmr_lambda,
-                  "group": group, "speaker": speaker, "file_id": file_id, "embedder": embedder, "role": role,
+                  "group": group, "speaker": speaker, "file_id": file_id, "role": role,
                   "auto_speaker": auto_speaker, "threshold": threshold, "collection": collection,
                   "answer": answer}
         return self._req("GET", "/search", params={k_: v for k_, v in params.items() if v is not None})
@@ -83,9 +84,9 @@ class Client:
         return self._req("POST", "/uploads", files={"file": (name, data)},
                          data={"title": title, "keyterms": keyterms, "collection": collection or ""})
 
-    def index(self, file_id, title, speakers: dict, embedder=None, host=0, collection=None):
+    def index(self, file_id, title, speakers: dict, host=0, collection=None):
         return self._req("POST", f"/uploads/{file_id}/index",
-                         json={"title": title, "speakers": speakers, "embedder": embedder, "host": host,
+                         json={"title": title, "speakers": speakers, "host": host,
                                "collection": collection})
 
     def job(self, job_id):
@@ -104,8 +105,8 @@ class Client:
     def eval_results(self):
         return self._req("GET", "/eval/results")
 
-    def eval_run(self, embedders: list[str], rerank=False, collection=None):
-        return self._req("POST", "/eval/run", params={"embedders": embedders, "rerank": rerank, **_c(collection)})
+    def eval_run(self, rerank=False, collection=None):
+        return self._req("POST", "/eval/run", params={"rerank": rerank, **_c(collection)})
 
 
 def _c(collection) -> dict:

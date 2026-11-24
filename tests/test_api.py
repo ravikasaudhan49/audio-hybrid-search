@@ -2,11 +2,12 @@
 import httpx
 import pytest
 
-from audiosearch import aio, db
-from backend.api import app, lifespan
+from audiosearch.core import runtime
+from audiosearch.db import Database
+from backend.main import app, lifespan
 
 try:
-    aio.run(db.init_schema())
+    runtime.run(Database().init_schema())
 except Exception as e:  # DB not reachable
     pytest.skip(f"database unavailable: {e}", allow_module_level=True)
 
@@ -18,20 +19,18 @@ def call(fn):
             transport = httpx.ASGITransport(app=app)
             async with httpx.AsyncClient(transport=transport, base_url="http://test") as client:
                 return await fn(client)
-    return aio.run(go())
+    return runtime.run(go())
 
 
 def test_health_reports_pool():
     body = call(lambda c: c.get("/health")).json()
-    assert body["database"] is True and "gemini" in body["embedders"]
+    assert body["database"] is True and body["embedding_model"] == "gemini-embedding-001"
     assert body["pool"]["pool_max"] >= body["pool"]["pool_min"] >= 1
 
 
-def test_search_rejects_unknown_method_and_embedder():
-    async def fn(c):
-        return [(await c.get("/search", params={"q": "x", "method": "bogus"})).status_code,
-                (await c.get("/search", params={"q": "x", "embedder": "bogus"})).status_code]
-    assert call(fn) == [400, 400]
+def test_search_rejects_unknown_method():
+    r = call(lambda c: c.get("/search", params={"q": "x", "method": "bogus"}))
+    assert r.status_code == 400
 
 
 def test_keyword_search_with_no_match():
