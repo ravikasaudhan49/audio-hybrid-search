@@ -14,7 +14,7 @@ answer on top.
 | **Off-topic → "no confident match"** | 4 of 5 (0.80) |
 | **Speaker attribution of hits** | 0.97 |
 | **Latency, 5 concurrent (warm)** | p50 186 ms · p90 274 ms · p99 371 ms · 25 req/s |
-| **Tests** | 71 automated tests incl. a recall@k quality gate (`python -m audiosearch test`) |
+| **Tests** | 80 automated tests incl. a recall@k quality gate (`python -m audiosearch test`) |
 
 Architecture diagrams and the data model: **[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)**.
 Coding-agent disclosure: **[AGENT_USE.md](AGENT_USE.md)** (and [§10](#10-coding-agent-disclosure)).
@@ -104,7 +104,7 @@ copy .env.example .env                      # then fill in the keys below
 | `COHERE_API_KEY` | reranking (or set `RERANK_PROVIDER=local` for an offline cross-encoder) | dashboard.cohere.com |
 | `ASSEMBLYAI_API_KEY` | transcribing **new** audio with speaker names (golden transcripts are committed) | assemblyai.com |
 
-Fully local alternative for embeddings: `EMBEDDER=bge-base` (see [§9](#9-limitations)).
+Embeddings always come from the Gemini API (there is no local embedding option; see [§9](#9-limitations)).
 
 ### One CLI for everything: `python -m audiosearch <command>`
 
@@ -214,7 +214,7 @@ Chronological. Each change was driven by a measurement, a test or a failed assum
 | D2 | **Rejected Gemini Live / separate VAD** | Live is for real-time conversation, and language-model transcription gives unreliable word timestamps, paraphrases words (breaks exact search) and is non-deterministic (breaks reproducible recall). Batch ASR's utterance segmentation already does what VAD would. |
 | D3 | **Deepgram Nova-3 first** | Word timestamps and diarization in one call. It transcribed the first full episodes (163 min) in 46 s, with 0.997–0.999 confidence and exactly 2 speakers each. It also showed a real ASR issue: "Kranz" came back as both *Kranz* and *Krantz* (the fuzzy ranker and keyterm prompting address this). |
 | D4 | **Switched transcription to AssemblyAI** | Deepgram's diarization gives only numbered speakers (confirmed in Deepgram's docs and forum), and the task needs "what did *Jordan* say". Researched options: context inference with a language model, speaking order, voice enrollment, episode data. **Tested AssemblyAI Speaker Identification on a 3-minute clip with no names supplied: it returned `{A: Gary Jordan, B: Patrick O'Neill}` from the conversation alone.** Transcription was made provider-neutral (normalized transcript format), so Deepgram remains a supported alternative (`TRANSCRIBER=deepgram`). |
-| D5 | **Gemini `gemini-embedding-001` (1536-d) with task types** | The team chose a hosted embedding API over local BGE (see the limitation in §9). Mitigation: an embedder interface where `bge-base`/`bge-small` run locally with the same code, and vectors of several models side by side (one partial HNSW index per model). |
+| D5 | **Gemini `gemini-embedding-001` (1536-d) with task types** | The team chose a hosted embedding API over local BGE (see the limitation in §9). The local BGE embedders were later removed by owner decision; the `Embedder` interface remains for adding another provider. |
 | D6 | **Chunking v1 → parent-child 128/512 tokens (tiktoken)** | v1 (~30 s speaker-turn windows) split questions from answers: "And how do you combine the two?" became its own 2-second chunk. A 512/2000-token child/parent split was proposed but rejected on arithmetic: a 9-minute file is ~1,750 tokens, so the parent would be the whole file (one result per file, meaningless recall) and 512-token children would mix both speakers. Result: 128-token children (25 overlap, one speaker) and 512-token parents of whole turns. |
 | D7 | **Keyword ranker: term-coverage gate** | A smoke test showed hybrid ranking chunks that shared only the word "search" above the correct semantic answer (RRF trusts ranks). 3+ term queries now need ≥ 50% of their terms and are ranked by coverage. |
 | D8 | **Cohere Rerank (default on) + MMR (opt-in)** | Reranking fixed paraphrase ordering. MMR (λ·relevance − (1−λ)·redundancy, using stored vectors, no API call) removes near-duplicate overlapping chunks when results feel repetitive. Trial limit of 10 calls/min: results are cached; interactive use falls back to the fused order and says so, while evaluation waits the limit out. |
@@ -354,9 +354,8 @@ with idempotent file ids (already content-hashed).
 
 * **Embeddings are hosted (Gemini), while the task says "embedding generation and indexing should
   run locally".** Indexing (pgvector, full-text, trigram) is local; the query and document vectors
-  come from the Gemini API by team decision. A local path exists and is implemented
-  (`EMBEDDER=bge-base` / `bge-small` via sentence-transformers, `RERANK_PROVIDER=local` for a local
-  cross-encoder); it has **not been evaluated** on the golden set in this submission.
+  come from the Gemini API by team decision. The local BGE embedders were removed (owner
+  decision: hosted APIs only), so there is **no local embedding path**.
 * **Small, builder-written golden set.** 76 queries over 6 clips (152 chunks), written after reading
   the transcripts, so recall@5 saturates at 1.00. Recall@1, MRR and off-topic handling are the
   discriminating metrics. More audio and blind labeling are needed.

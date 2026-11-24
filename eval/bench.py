@@ -23,12 +23,12 @@ from collections import defaultdict
 import httpx
 import numpy as np
 
-from audiosearch import config
-from audiosearch.golden import load_queries
+from audiosearch.core.settings import get_settings
+from audiosearch.evaluation import load_queries
 
 STAGES = ("understand", "embed", "retrieve", "rerank", "post", "answer", "total")
-OUT_JSON = config.EVAL_DIR / "latency.json"
-OUT_MD = config.EVAL_DIR / "latency.md"
+OUT_JSON = get_settings().eval_dir / "latency.json"
+OUT_MD = get_settings().eval_dir / "latency.md"
 
 
 def pct(xs: list[float]) -> dict:
@@ -103,7 +103,7 @@ def to_markdown(rep: dict) -> str:
     return "\n".join(lines)
 
 
-def main():
+def main(argv: list[str] | None = None):
     sys.stdout.reconfigure(encoding="utf-8")
     p = argparse.ArgumentParser()
     p.add_argument("--url", default="http://127.0.0.1:8000")
@@ -111,8 +111,8 @@ def main():
     p.add_argument("--rounds", type=int, default=10)
     p.add_argument("--warmup", type=int, default=1)
     p.add_argument("--answer", action="store_true", help="include the Gemini summary answer (API calls)")
-    p.add_argument("--collection", default=config.DEFAULT_COLLECTION)
-    a = p.parse_args()
+    p.add_argument("--collection", default=get_settings().default_collection)
+    a = p.parse_args(argv)
     rep = asyncio.run(run(a.url, a.concurrency, a.rounds, a.warmup, a.answer, a.collection))
     OUT_JSON.write_text(json.dumps(rep, indent=1), encoding="utf-8")
     md = to_markdown(rep)

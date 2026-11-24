@@ -11,12 +11,15 @@ the timestamp of the matched word, and the speaker's name**. See `README.md` and
 ## Architecture rules (do not change without an ADR)
 1. **Layering.** `audiosearch/` is the async core library. `backend/` is a thin FastAPI layer (it
    owns the pool and the models; slow work runs as jobs). `frontend/` is a pure HTTP client: no
-   database or model imports except `audiosearch.log`.
-2. **One code path.** Everything is async; scripts use `aio.run()` (SelectorEventLoop, required by
+   database or model imports except `audiosearch.core.log`. Package layout and patterns: ADR-0009.
+2. **One code path.** Everything is async; scripts use `audiosearch.core.runtime.run()` (SelectorEventLoop, required by
    psycopg on Windows); uvicorn runs with `--loop asyncio:SelectorEventLoop`.
 3. **Database access goes through `db.collection_conn(pool, collection)`.** Never query tables on
    a bare pooled connection; `search_path` selects the collection and is reset on release.
-   Collection names are validated by `db.schema_name()`.
+   Collection names are validated by `db.schema_name()`. SQL lives in `db/repositories.py`
+   (search rankers excepted: `retrieval/rankers.py`).
+   The embedder, reranker and transcriber are chosen once, in `container.py` (`AppContainer`,
+   from `.env`), and passed into services; callers never pick a provider themselves.
 4. **One connection per search, held for milliseconds.** Call embedding and rerank APIs *before*
    or *after* holding a connection, never while holding it. No psycopg pipeline mode (measured 7×
    slower on this stack, see ADR-0006).
@@ -55,6 +58,6 @@ For performance changes, run `python -m audiosearch bench` and report p50/p90/p9
   
 ## Conventions
 * Python 3.12+, ruff (line length 120), type hints, small functions, docstrings that explain *why*.
-* Logging via `audiosearch.log.get(__name__)`; every line carries the request / job id; never log keys.
+* Settings via `get_settings()` (never import-time defaults). Logging via `audiosearch.core.log.get(__name__)`; every line carries the request / job id; never log keys.
 * Secrets only in `.env` (git-ignored); `.env.example` lists every key.
 * Every significant design change gets an ADR in `docs/adr/`; every change states how it was verified.
