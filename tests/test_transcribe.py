@@ -1,6 +1,9 @@
 """Provider normalization and speaker naming, from tiny synthetic responses (no API calls)."""
-from audiosearch.segment import speaker_names
-from audiosearch.transcribe import normalize_assemblyai, normalize_deepgram
+from audiosearch.ingestion.chunking import speaker_names
+from audiosearch.ingestion.transcription import AssemblyAITranscriber, DeepgramTranscriber
+
+normalize_assemblyai = AssemblyAITranscriber.normalize
+normalize_deepgram = DeepgramTranscriber.normalize
 
 
 def test_assemblyai_with_speaker_identification_keeps_names_and_seconds():

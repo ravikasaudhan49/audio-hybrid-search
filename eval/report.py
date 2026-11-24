@@ -20,14 +20,17 @@ import subprocess
 import sys
 from datetime import datetime
 
-from audiosearch import aio, config, db
-from audiosearch import log as logs
-from audiosearch.golden import is_hit, load_queries
-from audiosearch.search import Searcher, fmt_ts
+from audiosearch.container import AppContainer
+from audiosearch.core import log as logs
+from audiosearch.core import runtime
+from audiosearch.core.settings import get_settings
+from audiosearch.core.text import fmt_ts
+from audiosearch.evaluation import is_hit, load_queries
+from audiosearch.models import SearchRequest
 from eval import build_golden
-from eval.evaluate import RESULTS_JSON, RESULTS_MD, run_evaluation
 
-OUT = config.ROOT / "test-results"
+SETTINGS = get_settings()
+OUT = SETTINGS.root / "test-results"
 TOP = 5
 
 
@@ -35,15 +38,15 @@ def _passage(rel: dict) -> str:
     return f"{rel['file']} {fmt_ts(rel['start'])}–{fmt_ts(rel['end'])} ({rel.get('speaker') or '?'})"
 
 
-async def per_query_evidence(pool) -> str:
+async def per_query_evidence(app: AppContainer) -> str:
     """Default pipeline (hybrid + rerank + threshold), golden files only."""
-    s = Searcher(pool, origin="golden")
+    s = app.searcher(origin="golden")
     lines = ["# Per-query evidence: default pipeline (hybrid + rerank + relevance threshold)", "",
              "For each golden query: the labeled answer passage (from the transcript anchor), then the top "
              f"{TOP} retrieved chunks. ✅ = same file and overlapping the labeled passage (±2 s).", ""]
     found_at = {}
     for q in load_queries():
-        out = await s.search(q["query"], "hybrid", 10, patient_rerank=True)
+        out = await s.search(SearchRequest(q["query"], "hybrid", 10, patient_rerank=True))
         rels = q["relevant"]
         lines.append(f"### {q['id']} · {q['type']} · “{q['query']}”")
         if rels:
@@ -69,9 +72,10 @@ async def per_query_evidence(pool) -> str:
                    "❌ returned results for an off-topic query" if not rels else
                    f"✅ first hit at rank {first}" if first else "❌ not found in top 10")
         lines += [f"**Verdict:** {verdict}", ""]
-        found_at[q["id"]] = first if rels else (not out.results)
-    pos = [v for k, v in found_at.items() if not k.startswith("n")]
-    neg = [v for k, v in found_at.items() if k.startswith("n")]
+        found_at[q["id"]] = (bool(rels), first if rels else (not out.results))
+    # Negative = no labeled passage (not an id convention).
+    pos = [v for positive, v in found_at.values() if positive]
+    neg = [v for positive, v in found_at.values() if not positive]
     summary = [f"**Summary:** {sum(1 for v in pos if v == 1)}/{len(pos)} answerable queries at rank 1, "
                f"{sum(1 for v in pos if v and v <= 5)}/{len(pos)} in the top 5; "
                f"{sum(neg)}/{len(neg)} off-topic queries correctly returned nothing.", ""]
@@ -80,17 +84,14 @@ async def per_query_evidence(pool) -> str:
 
 async def build() -> None:
     OUT.mkdir(exist_ok=True)
-    pool = await db.open_pool(min_size=1, max_size=4)
-    try:
+    async with AppContainer.open(min_size=1, max_size=4) as app:
+        evaluator = app.evaluator()
         print("1/4 evaluating all configurations …")
-        await run_evaluation(pool, [config.EMBEDDER], rerank=True)
-        shutil.copy(RESULTS_MD, OUT / "evaluation_summary.md")
-        shutil.copy(RESULTS_JSON, OUT / "evaluation_full.json")
+        await evaluator.run(rerank=True)
+        shutil.copy(evaluator.results_md, OUT / "evaluation_summary.md")
+        shutil.copy(evaluator.results_json, OUT / "evaluation_full.json")
         print("2/4 per-query evidence …")
-        (OUT / "per_query_evidence.md").write_text(await per_query_evidence(pool), encoding="utf-8")
-    finally:
-        await pool.close()
-        await aio.close_http()
+        (OUT / "per_query_evidence.md").write_text(await per_query_evidence(app), encoding="utf-8")
 
 
 def main() -> int:
@@ -98,23 +99,23 @@ def main() -> int:
     logs.setup("eval")
     if build_golden.main():
         return 1
-    aio.run(build())
+    runtime.run(build())
     print("3/4 pytest …")
     run = subprocess.run([sys.executable, "-m", "pytest", "-v", "--junitxml", str(OUT / "pytest_junit.xml")],
-                         cwd=config.ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+                         cwd=SETTINGS.root, capture_output=True, text=True, encoding="utf-8", errors="replace")
     (OUT / "pytest_output.txt").write_text(run.stdout + run.stderr, encoding="utf-8")
     print("4/4 latency (copied from the last bench run) …")
     for name in ("latency.md", "latency.json"):
-        if (config.EVAL_DIR / name).exists():
-            shutil.copy(config.EVAL_DIR / name, OUT / name)
-    summary = json.loads(RESULTS_JSON.read_text())
-    default = summary.get(f"hybrid+rerank ({config.EMBEDDER})", {})
+        if (SETTINGS.eval_dir / name).exists():
+            shutil.copy(SETTINGS.eval_dir / name, OUT / name)
+    summary = json.loads((SETTINGS.eval_dir / "results.json").read_text())
+    default = summary.get(f"hybrid+rerank ({SETTINGS.embedder})", {})
     o = default.get("overall", {})
     last_line = (run.stdout.strip().splitlines() or ["?"])[-1]
     (OUT / "README.md").write_text(f"""# Test results
 
 Generated {datetime.now():%Y-%m-%d %H:%M} by `python -m eval.report` (golden set: {len(load_queries())} queries,
-collection `{config.DEFAULT_COLLECTION}`, golden files only).
+collection `{SETTINGS.default_collection}`, golden files only).
 
 **Default pipeline (hybrid + rerank):** recall@1 {o.get('recall@1', 0):.2f} · recall@3 {o.get('recall@3', 0):.2f} ·
 recall@5 {o.get('recall@5', 0):.2f} · recall@10 {o.get('recall@10', 0):.2f} · MRR {o.get('mrr', 0):.2f} ·

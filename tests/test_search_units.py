@@ -1,7 +1,13 @@
 import numpy as np
 
-from audiosearch import aio, rerank, search
-from audiosearch.search import fmt_ts, locate, mmr_select, query_terms, rrf
+from audiosearch.core import runtime
+from audiosearch.core.errors import RerankUnavailable
+from audiosearch.core.text import fmt_ts
+from audiosearch.models import Result, SearchOutput
+from audiosearch.retrieval import SearchService
+from audiosearch.retrieval.fusion import mmr_select, rrf
+from audiosearch.retrieval.highlight import locate, query_terms
+from audiosearch.retrieval.rerankers import Reranker
 
 
 def test_rrf_rewards_agreement_between_methods():
@@ -50,18 +56,17 @@ def test_mmr_handles_missing_vectors_and_small_k():
     assert mmr_select(rel, np.zeros((3, 4), np.float32), k=5) == [1, 2, 0]
 
 
-def test_rerank_falls_back_to_fused_order_when_unavailable(monkeypatch):
-    class Down(rerank.Reranker):
+def test_rerank_falls_back_to_fused_order_when_unavailable():
+    class Down(Reranker):
         name = "down"
 
-        async def scores(self, query, docs):
-            raise rerank.RerankUnavailable("rate limit")
+        async def _scores(self, query, docs, patient):
+            raise RerankUnavailable("rate limit")
 
-    monkeypatch.setattr(search, "get_reranker", lambda **kw: Down())
-    results = [search.Result(i, "f", "t", "a", "s", 0, 1, 0, "x", "x", 1.0 - i / 10, {"keyword": i + 1},
-                             "f:p00", 0, 1, "x")
+    results = [Result(i, "f", "t", "a", "s", 0, 1, 0, "x", "x", 1.0 - i / 10, {"keyword": i + 1}, "f:p00", 0, 1, "x")
                for i in range(3)]
-    out = search.SearchOutput(list(results))
-    aio.run(search.Searcher._rerank("q", out, patient=False))
+    out = SearchOutput(list(results))
+    service = SearchService(pool=None, embedder=None, reranker=Down(), speakers=object())
+    runtime.run(service._rerank("q", out, patient=False))
     assert not out.reranked and [r.segment_id for r in out.results] == [0, 1, 2]
     assert "rate limit" in out.notes[0]

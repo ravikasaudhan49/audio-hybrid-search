@@ -7,10 +7,13 @@ Query embeddings and rerank scores are cached (.cache/), so after one `python -m
 --rerank` run this gate costs no API calls; on a fresh machine it spends ~1 Gemini call per
 query and ~1 Cohere call per query (hybrid+rerank).
 """
+import psycopg
 import pytest
 
-from audiosearch import aio, config, db
-from audiosearch.golden import load_queries
+from audiosearch.container import AppContainer
+from audiosearch.core import runtime
+from audiosearch.db import FileRepository, collection_conn
+from audiosearch.evaluation import evaluate, load_queries
 
 THRESHOLDS = {"recall@5": 0.90, "recall@10": 0.95}
 MIN_NO_ANSWER = 0.75   # share of negative queries that must return "no confident match"
@@ -18,21 +21,14 @@ MAX_P95_MS = 1500  # includes a hosted query-embedding call when EMBEDDER=gemini
 
 
 async def _evaluate_all() -> dict | str:
-    from audiosearch.search import Searcher
-    from eval.evaluate import evaluate
-    pool = await db.open_pool(min_size=1, max_size=6)
-    try:
-        async with db.collection_conn(pool, config.DEFAULT_COLLECTION) as conn:
-            cur = await conn.execute("SELECT count(*) FROM files WHERE origin = 'golden'")
-            if not (await cur.fetchone())[0]:
+    async with AppContainer.open(min_size=1, max_size=6) as app:
+        async with collection_conn(app.pool, app.settings.default_collection) as conn:
+            if not await FileRepository(conn).count_by_origin("golden"):
                 return "no golden files ingested; run `python -m audiosearch ingest`"
-        s = Searcher(pool, origin="golden")
+        s = app.searcher(origin="golden")
         out = {m: await evaluate(s, load_queries(), m) for m in ("keyword", "vector", "hybrid")}  # no rerank
         out["hybrid+rerank"] = await evaluate(s, load_queries(), "hybrid", rerank=True)
         return out
-    finally:
-        await pool.close()
-        await aio.close_http()
 
 
 @pytest.fixture(scope="module")
@@ -40,8 +36,8 @@ def reports():
     if not load_queries():
         pytest.skip("no labeled queries yet (data/queries.json)")
     try:
-        out = aio.run(_evaluate_all())
-    except OSError as e:  # DB not reachable
+        out = runtime.run(_evaluate_all())
+    except (OSError, psycopg.OperationalError) as e:  # DB not reachable
         pytest.skip(f"database unavailable: {e}")
     if isinstance(out, str):
         pytest.skip(out)

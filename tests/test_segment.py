@@ -1,7 +1,7 @@
 from itertools import pairwise
 
-from audiosearch import config
-from audiosearch.segment import Word, chunk_transcript, clean_speakers, smooth_flips
+from audiosearch.ingestion.chunking import CHUNKING, chunk_transcript, clean_speakers, smooth_flips
+from audiosearch.models import Word
 
 
 def dg(words):
@@ -42,10 +42,10 @@ def test_children_are_speaker_pure_bounded_and_inside_their_parent():
     by_index = {p.index: p for p in parents}
     for ch in children:
         assert len({w.speaker for w in ch.words}) == 1
-        assert ch.tokens <= config.CHILD_TOKENS + config.CHILD_MIN_TOKENS   # tail merge may add a little
+        assert ch.tokens <= CHUNKING.child_tokens + CHUNKING.child_min_tokens   # tail merge may add a little
         p = by_index[ch.parent]
         assert p.start <= ch.start and ch.end <= p.end
-    assert all(p.tokens <= config.PARENT_TOKENS for p in parents)
+    assert all(p.tokens <= CHUNKING.parent_tokens for p in parents)
     assert len(parents) >= 2 and len(children) > len(parents)
 
 
@@ -65,7 +65,7 @@ def test_adjacent_children_overlap_within_the_budget():
     for prev, nxt in pairwise(children):
         if prev.parent == nxt.parent:
             shared = [w for w in nxt.words if w.start < prev.end]
-            assert 0 < sum(w.tokens for w in shared) <= config.CHILD_OVERLAP_TOKENS
+            assert 0 < sum(w.tokens for w in shared) <= CHUNKING.child_overlap_tokens
 
 
 def test_backchannel_turn_gets_no_child_but_stays_in_parent_text():
@@ -81,4 +81,4 @@ def test_run_on_turn_without_punctuation_is_hard_split():
     words = [(f"um{i}", i * 0.3, i * 0.3 + 0.3, 0) for i in range(900)]
     parents, children = chunk_transcript(dg(words))
     assert len(parents) >= 2
-    assert all(c.tokens <= config.CHILD_TOKENS + config.CHILD_MIN_TOKENS for c in children)
+    assert all(c.tokens <= CHUNKING.child_tokens + CHUNKING.child_min_tokens for c in children)
